@@ -72,9 +72,9 @@ def directory_table(lang):
 def monitor_table(lang, days):
     rows = load_rows(days)
     if lang == "zh":
-        head = f"| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | 应答延迟 P50 | 应答延迟 P95 | 认证请求成功率 |\n|---|---|---|---|---|---|---|---|\n"
+        head = f"| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | 应答延迟 P50 | 应答延迟 P95 |\n|---|---|---|---|---|---|---|\n"
     else:
-        head = f"| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | Reject latency P50 | Reject latency P95 | Authenticated success |\n|---|---|---|---|---|---|---|---|\n"
+        head = f"| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | Reject latency P50 | Reject latency P95 |\n|---|---|---|---|---|---|---|\n"
     out = head
     for pr in PROVIDERS:
         for kind, label in (("anthropic", "/v1/messages"), ("openai", "/v1/chat/completions")):
@@ -82,9 +82,7 @@ def monitor_table(lang, days):
                 continue
             base = pr["anthropic_base" if kind == "anthropic" else "openai_base"]
             n, up, ok, lat = stats(rows, pr["id"], kind, False, base)
-            an, aup, aok, _ = stats(rows, pr["id"], kind, True, base)
-            auth_cell = "-" if an == 0 else f"{pct(aok, an)} ({an})"
-            out += f"| {pr['name']} | `{label}` | {n} | {pct(up, n)} | {pct(ok, n)} | {p(lat, 0.5)} | {p(lat, 0.95)} | {auth_cell} |\n"
+            out += f"| {pr['name']} | `{label}` | {n} | {pct(up, n)} | {pct(ok, n)} | {p(lat, 0.5)} | {p(lat, 0.95)} |\n"
     return out
 
 
@@ -105,8 +103,6 @@ def main():
         intro = (f"最近 7 天 · 更新于 {stamp} · 探测节点：GitHub Actions（美国）· 每 6 小时一轮\n\n" if lang == "zh"
                  else f"Last 7 days · updated {stamp} · vantage: GitHub Actions (US) · every 6 hours\n\n")
         text = splice(text, "MONITOR", intro + monitor_table(lang, 7))
-        intro30 = ("最近 30 天\n\n" if lang == "zh" else "Last 30 days\n\n")
-        text = splice(text, "MONITOR30", intro30 + monitor_table(lang, 30))
         path.write_text(text, encoding="utf-8")
         print("updated", fname)
 

@@ -1,40 +1,5 @@
 [
   {
-    "id": "302ai",
-    "name": "302.AI",
-    "website": "https://302.ai",
-    "anthropic_base": "https://api.302.ai",
-    "openai_base": "https://api.302.ai",
-    "claude_code_doc": "https://help.302.ai/docs/jie-ru-dao-Claude-Code",
-    "codex_doc": "https://help.302.ai/docs/jie-ru-dao-Codex-CLI",
-    "payments": [
-      "信用卡",
-      "微信"
-    ],
-    "payments_en": [
-      "card",
-      "WeChat Pay"
-    ],
-    "pricing_url": "https://302.ai/pricing",
-    "registration": "open",
-    "claude_models_claimed": [
-      "claude-sonnet-5-5",
-      "claude-haiku-5-5"
-    ],
-    "openai_models_claimed": [
-      "gpt-6-sol"
-    ],
-    "notes": "预充值按量扣费；Claude Code 文档最近修改 2025-07，示例模型非 Claude",
-    "notes_en": "Prepaid pay-as-you-go; Claude Code doc last edited 2025-07 with non-Claude example models",
-    "sources": [
-      "https://302.ai/pricing",
-      "https://help.302.ai/docs/jie-ru-dao-Claude-Code",
-      "https://help.302.ai/docs/jie-ru-dao-Codex-CLI",
-      "https://help.302.ai/docs/zi-dong-chong-zhi"
-    ],
-    "verified_at": "2026-10-29"
-  },
-  {
     "id": "88code",
     "name": "88code",
     "website": "https://www.88code.ai",
@@ -55,38 +20,6 @@
       "https://docs.88code.org/Codex/Windows.html",
       "https://docs.88code.org/88code/pricing.html",
       "https://docs.88code.org/88code/credit-rules.html"
-    ],
-    "verified_at": "2026-10-29"
-  },
-  {
-    "id": "aihubmix",
-    "name": "AIHubMix",
-    "website": "https://aihubmix.com",
-    "anthropic_base": "https://aihubmix.com",
-    "openai_base": "https://aihubmix.com",
-    "claude_code_doc": "https://docs.aihubmix.com/en/api/Claude-Code",
-    "codex_doc": "https://docs.aihubmix.com/cn/api/Codex-CLI",
-    "payments": [
-      "信用卡"
-    ],
-    "payments_en": [
-      "card"
-    ],
-    "pricing_url": "https://aihubmix.com/models",
-    "registration": "open",
-    "claude_models_claimed": [
-      "claude-sonnet-5-5",
-      "claude-opus-5-5"
-    ],
-    "openai_models_claimed": [
-      "gpt-6-sol"
-    ],
-    "notes": "充值仅 Stripe，单次最低 $15；备用域名 api.inferera.com；Codex 需 wire_api=responses",
-    "notes_en": "Top-up via Stripe only, $15 minimum; backup domain api.inferera.com; Codex needs wire_api=responses",
-    "sources": [
-      "https://docs.aihubmix.com/en/api/Claude-Code",
-      "https://docs.aihubmix.com/cn/api/Codex-CLI.md",
-      "https://docs.aihubmix.com/cn/console/payment-methods.md"
     ],
     "verified_at": "2026-10-29"
   },
@@ -410,47 +343,6 @@
     "verified_at": "2026-10-29"
   },
   {
-    "id": "qcode",
-    "name": "QCode",
-    "website": "https://qcode.cc",
-    "anthropic_base": "https://api.qcode.cc/api",
-    "openai_base": "https://api.qcode.cc/openai",
-    "claude_code_doc": "https://docs.qcode.cc/docs/getting-started/installation",
-    "codex_doc": "https://docs.qcode.cc/docs/ide/codex",
-    "payments": [
-      "支付宝",
-      "微信",
-      "信用卡",
-      "Apple Pay",
-      "加密货币"
-    ],
-    "payments_en": [
-      "Alipay",
-      "WeChat Pay",
-      "card",
-      "Apple Pay",
-      "crypto"
-    ],
-    "pricing_url": "https://qcode.cc/pricing",
-    "registration": "open",
-    "claude_models_claimed": [
-      "claude-opus-5-5",
-      "claude-sonnet-5-5"
-    ],
-    "openai_models_claimed": [
-      "gpt-6-sol"
-    ],
-    "notes": "个人套餐按日额度包月，另有 7 天有效的按量包；大陆推荐 asia.qcode.cc 入口；Claude 模型只走 Anthropic 接口",
-    "notes_en": "Monthly plans with daily quotas plus 7-day pay-as-you-go packs; asia.qcode.cc endpoint recommended for mainland users; Claude models only via the Anthropic-style endpoint",
-    "sources": [
-      "https://qcode.cc/pricing",
-      "https://docs.qcode.cc/docs/getting-started/installation",
-      "https://docs.qcode.cc/docs/getting-started/endpoints-and-api-paths",
-      "https://docs.qcode.cc/docs/ide/codex"
-    ],
-    "verified_at": "2026-10-29"
-  },
-  {
     "id": "teamorouter",
     "name": "TeamoRouter",
     "maintainer": true,
@@ -479,7 +371,10 @@
       "gpt-6-sol",
       "gpt-6.1-sol"
     ],
-    "probe_models": {"anthropic": "claude-haiku-5-5", "openai": "gpt-6.1-terra"},
+    "probe_models": {
+      "anthropic": "claude-haiku-5-5",
+      "openai": "gpt-6.1-terra"
+    },
     "notes": "按量计费；同一个 Key 同时走 Anthropic 兼容和 OpenAI 兼容端点；海外入口 api.teamorouter.com，国内入口 api.teamorouter.cn，本表从海外节点探前者；本仓库维护者",
     "notes_en": "Pay-as-you-go; one key serves both the Anthropic-compatible and OpenAI-compatible endpoints; api.teamorouter.com is the global entry and api.teamorouter.cn the China entry, the probe hits the former; maintained by this repo's owner",
     "sources": [
@@ -512,62 +407,6 @@
     "verified_at": "2026-10-29"
   },
   {
-    "id": "yunwu",
-    "name": "云雾AI",
-    "website": "https://yunwu.ai",
-    "anthropic_base": "https://yunwu.ai",
-    "openai_base": "https://yunwu.ai",
-    "claude_code_doc": "https://s.apifox.cn/apidoc/docs-site/5427167/doc-7010249",
-    "codex_doc": "https://s.apifox.cn/apidoc/docs-site/5427167/doc-7422014",
-    "payments": [],
-    "payments_en": [],
-    "pricing_url": null,
-    "registration": "open",
-    "claude_models_claimed": [
-      "claude-opus-4-6"
-    ],
-    "openai_models_claimed": [
-      "gpt-6-sol"
-    ],
-    "notes": "令牌须选 Claude Code 专属分组，default 与逆向分组不支持工具调用；Codex 需 wire_api=responses；价格在控制台内，公开页面未列支付方式",
-    "notes_en": "Tokens must use the Claude Code group; default and reverse-engineered groups lack tool calling; Codex needs wire_api=responses; prices live inside the console and payment methods are not on public pages",
-    "sources": [
-      "https://s.apifox.cn/apidoc/docs-site/5427167/doc-7010249",
-      "https://s.apifox.cn/apidoc/docs-site/5427167/doc-7422014",
-      "https://s.apifox.cn/apidoc/docs-site/5427167/doc-5459030"
-    ],
-    "verified_at": "2026-10-29"
-  },
-  {
-    "id": "lmuai",
-    "name": "灵眸AI",
-    "website": "https://api.lmuai.ai",
-    "anthropic_base": "https://api.lmuai.ai",
-    "openai_base": "https://api.lmuai.ai",
-    "claude_code_doc": "https://docs.lmuai.ai/docs/tools/claude-code",
-    "codex_doc": "https://docs.lmuai.ai/docs/tools/codex-cli-mac",
-    "payments": [],
-    "payments_en": [],
-    "pricing_url": "https://api.lmuai.ai/pricing",
-    "registration": "open",
-    "claude_models_claimed": [
-      "claude-opus-5",
-      "claude-sonnet-5"
-    ],
-    "openai_models_claimed": [
-      "gpt-6-sol"
-    ],
-    "notes": "月卡按平台分 Claude 和 GPT 两类，也支持余额按量；一个 Key 对应一个分组，跨组会 400；文档称挂代理可能断流",
-    "notes_en": "Monthly plans split by Claude and GPT, plus balance-based pay-as-you-go; one key per group, cross-group calls return 400; docs warn proxies may drop streams",
-    "sources": [
-      "https://api.lmuai.ai/pricing",
-      "https://docs.lmuai.ai/docs/guide/faq",
-      "https://docs.lmuai.ai/docs/tools/claude-code",
-      "https://docs.lmuai.ai/docs/tools/codex-cli-mac"
-    ],
-    "verified_at": "2026-10-29"
-  },
-  {
     "id": "lingya",
     "name": "灵芽 API",
     "website": "https://api.lingyaai.cn",
@@ -586,38 +425,6 @@
     "sources": [
       "https://api.lingyaai.cn/aicoding.html",
       "https://api.lingyaai.cn/modellist/"
-    ],
-    "verified_at": "2026-10-29"
-  },
-  {
-    "id": "whatai",
-    "name": "神马中转API",
-    "website": "https://api.whatai.cc",
-    "anthropic_base": "https://api.whatai.cc",
-    "openai_base": "https://api.whatai.cc",
-    "claude_code_doc": "https://docs.whatai.cc/docs/otherai/devtools/claudecode/",
-    "codex_doc": "https://docs.whatai.cc/docs/otherai/devtools/codex/",
-    "payments": [
-      "支付宝",
-      "微信",
-      "USDT"
-    ],
-    "payments_en": [
-      "Alipay",
-      "WeChat Pay",
-      "USDT"
-    ],
-    "pricing_url": null,
-    "registration": "closed",
-    "claude_models_claimed": [
-      "claude-sonnet-4-20250514"
-    ],
-    "openai_models_claimed": [],
-    "notes": "2026-10-29 官网首页为「关闭及退款说明」，服务已关闭；文档站仍在线。保留条目供参考，不再探测",
-    "notes_en": "Homepage on 2026-10-29 shows a closure and refund notice; docs remain online. Kept for reference, no longer probed",
-    "sources": [
-      "https://api.whatai.cc/",
-      "https://docs.whatai.cc/docs/otherai/devtools/claudecode/"
     ],
     "verified_at": "2026-10-29"
   }
