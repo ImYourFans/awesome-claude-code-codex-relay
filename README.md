@@ -48,47 +48,47 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 ## 可用性探测
 
 <!-- MONITOR:START -->
-最近 7 天 · 更新于 2026-10-29 13:38 UTC · 探测节点：GitHub Actions（美国）· 每 6 小时一轮
+最近 7 天 · 更新于 2026-10-29 13:39 UTC · 探测节点：GitHub Actions（美国）· 每 6 小时一轮
 
 | 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | 应答延迟 P50 | 应答延迟 P95 | 认证请求成功率 |
 |---|---|---|---|---|---|---|---|
-| 302.AI | `/v1/messages` | 4 | 100.0% | 100.0% | 566 ms | 2737 ms | - |
-| 302.AI | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 565 ms | 1778 ms | - |
-| 88code | `/v1/messages` | 4 | 100.0% | 100.0% | 705 ms | 743 ms | - |
-| 88code | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 529 ms | 613 ms | - |
-| AIHubMix | `/v1/messages` | 4 | 100.0% | 100.0% | 159 ms | 180 ms | - |
-| AIHubMix | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 129 ms | 138 ms | - |
-| AnyRouter | `/v1/messages` | 4 | 100.0% | 100.0% | 1697 ms | 1857 ms | - |
-| APIMart | `/v1/messages` | 4 | 100.0% | 100.0% | 352 ms | 366 ms | - |
-| APIMart | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 295 ms | 303 ms | - |
-| APINebula | `/v1/messages` | 4 | 100.0% | 100.0% | 212 ms | 215 ms | - |
-| APINebula | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 281 ms | 300 ms | - |
-| CloseAI | `/v1/messages` | 4 | 100.0% | 100.0% | 272 ms | 353 ms | - |
-| CloseAI | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 133 ms | 222 ms | - |
-| CoderPlan | `/v1/messages` | 4 | 100.0% | 100.0% | 712 ms | 729 ms | - |
-| CoderPlan | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 690 ms | 701 ms | - |
-| DuckCoding | `/v1/messages` | 4 | 100.0% | 100.0% | 1151 ms | 1264 ms | - |
-| DuckCoding | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 263 ms | 1044 ms | - |
-| laozhang.ai | `/v1/messages` | 4 | 100.0% | 100.0% | 234 ms | 340 ms | - |
-| laozhang.ai | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 217 ms | 246 ms | - |
-| OhMyGPT | `/v1/messages` | 4 | 100.0% | 100.0% | 212 ms | 239 ms | - |
-| OhMyGPT | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 178 ms | 184 ms | - |
-| OpenRouter | `/v1/messages` | 4 | 100.0% | 100.0% | 131 ms | 158 ms | - |
-| OpenRouter | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 71 ms | 74 ms | - |
-| PackyAPI（原 PackyCode） | `/v1/messages` | 4 | 100.0% | 100.0% | 584 ms | 606 ms | - |
-| PackyAPI（原 PackyCode） | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 295 ms | 404 ms | - |
-| QCode | `/v1/messages` | 4 | 100.0% | 100.0% | 349 ms | 388 ms | - |
-| QCode | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 340 ms | 383 ms | - |
-| TeamoRouter | `/v1/messages` | 1 | 100.0% | 100.0% | 652 ms | 652 ms | 100.0% (1) |
-| TeamoRouter | `/v1/chat/completions` | 1 | 100.0% | 100.0% | 624 ms | 624 ms | 100.0% (1) |
-| YesCode | `/v1/messages` | 4 | 100.0% | 100.0% | 548 ms | 617 ms | - |
-| YesCode | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 504 ms | 582 ms | - |
-| 云雾AI | `/v1/messages` | 4 | 100.0% | 100.0% | 465 ms | 484 ms | - |
-| 云雾AI | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 469 ms | 491 ms | - |
-| 灵眸AI | `/v1/messages` | 4 | 100.0% | 100.0% | 802 ms | 810 ms | - |
-| 灵眸AI | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 606 ms | 636 ms | - |
-| 灵芽 API | `/v1/messages` | 4 | 100.0% | 100.0% | 961 ms | 1412 ms | - |
-| 灵芽 API | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 1210 ms | 2955 ms | - |
+| 302.AI | `/v1/messages` | 5 | 100.0% | 100.0% | 557 ms | 2737 ms | - |
+| 302.AI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 560 ms | 1778 ms | - |
+| 88code | `/v1/messages` | 5 | 100.0% | 100.0% | 667 ms | 743 ms | - |
+| 88code | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 474 ms | 613 ms | - |
+| AIHubMix | `/v1/messages` | 5 | 100.0% | 100.0% | 130 ms | 180 ms | - |
+| AIHubMix | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 117 ms | 138 ms | - |
+| AnyRouter | `/v1/messages` | 5 | 100.0% | 100.0% | 1697 ms | 1867 ms | - |
+| APIMart | `/v1/messages` | 5 | 100.0% | 100.0% | 351 ms | 366 ms | - |
+| APIMart | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 283 ms | 303 ms | - |
+| APINebula | `/v1/messages` | 5 | 100.0% | 100.0% | 212 ms | 274 ms | - |
+| APINebula | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 280 ms | 300 ms | - |
+| CloseAI | `/v1/messages` | 5 | 100.0% | 100.0% | 264 ms | 353 ms | - |
+| CloseAI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 116 ms | 222 ms | - |
+| CoderPlan | `/v1/messages` | 5 | 100.0% | 100.0% | 704 ms | 729 ms | - |
+| CoderPlan | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 690 ms | 1114 ms | - |
+| DuckCoding | `/v1/messages` | 5 | 100.0% | 100.0% | 363 ms | 1264 ms | - |
+| DuckCoding | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 240 ms | 1044 ms | - |
+| laozhang.ai | `/v1/messages` | 5 | 100.0% | 100.0% | 178 ms | 340 ms | - |
+| laozhang.ai | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 208 ms | 246 ms | - |
+| OhMyGPT | `/v1/messages` | 5 | 100.0% | 100.0% | 208 ms | 239 ms | - |
+| OhMyGPT | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 105 ms | 184 ms | - |
+| OpenRouter | `/v1/messages` | 5 | 100.0% | 100.0% | 107 ms | 158 ms | - |
+| OpenRouter | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 67 ms | 74 ms | - |
+| PackyAPI（原 PackyCode） | `/v1/messages` | 5 | 100.0% | 100.0% | 481 ms | 606 ms | - |
+| PackyAPI（原 PackyCode） | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 164 ms | 404 ms | - |
+| QCode | `/v1/messages` | 5 | 100.0% | 100.0% | 278 ms | 388 ms | - |
+| QCode | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 312 ms | 383 ms | - |
+| TeamoRouter | `/v1/messages` | 2 | 100.0% | 100.0% | 555 ms | 652 ms | 100.0% (2) |
+| TeamoRouter | `/v1/chat/completions` | 2 | 100.0% | 100.0% | 538 ms | 624 ms | 100.0% (2) |
+| YesCode | `/v1/messages` | 5 | 100.0% | 100.0% | 548 ms | 691 ms | - |
+| YesCode | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 497 ms | 582 ms | - |
+| 云雾AI | `/v1/messages` | 5 | 100.0% | 100.0% | 465 ms | 496 ms | - |
+| 云雾AI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 459 ms | 491 ms | - |
+| 灵眸AI | `/v1/messages` | 5 | 100.0% | 100.0% | 780 ms | 810 ms | - |
+| 灵眸AI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 579 ms | 636 ms | - |
+| 灵芽 API | `/v1/messages` | 5 | 100.0% | 100.0% | 951 ms | 1412 ms | - |
+| 灵芽 API | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 919 ms | 2955 ms | - |
 | 神马中转API | `/v1/messages` | 0 | - | - | - | - | - |
 | 神马中转API | `/v1/chat/completions` | 0 | - | - | - | - | - |
 <!-- MONITOR:END -->
@@ -101,43 +101,43 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 
 | 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | 应答延迟 P50 | 应答延迟 P95 | 认证请求成功率 |
 |---|---|---|---|---|---|---|---|
-| 302.AI | `/v1/messages` | 4 | 100.0% | 100.0% | 566 ms | 2737 ms | - |
-| 302.AI | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 565 ms | 1778 ms | - |
-| 88code | `/v1/messages` | 4 | 100.0% | 100.0% | 705 ms | 743 ms | - |
-| 88code | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 529 ms | 613 ms | - |
-| AIHubMix | `/v1/messages` | 4 | 100.0% | 100.0% | 159 ms | 180 ms | - |
-| AIHubMix | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 129 ms | 138 ms | - |
-| AnyRouter | `/v1/messages` | 4 | 100.0% | 100.0% | 1697 ms | 1857 ms | - |
-| APIMart | `/v1/messages` | 4 | 100.0% | 100.0% | 352 ms | 366 ms | - |
-| APIMart | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 295 ms | 303 ms | - |
-| APINebula | `/v1/messages` | 4 | 100.0% | 100.0% | 212 ms | 215 ms | - |
-| APINebula | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 281 ms | 300 ms | - |
-| CloseAI | `/v1/messages` | 4 | 100.0% | 100.0% | 272 ms | 353 ms | - |
-| CloseAI | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 133 ms | 222 ms | - |
-| CoderPlan | `/v1/messages` | 4 | 100.0% | 100.0% | 712 ms | 729 ms | - |
-| CoderPlan | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 690 ms | 701 ms | - |
-| DuckCoding | `/v1/messages` | 4 | 100.0% | 100.0% | 1151 ms | 1264 ms | - |
-| DuckCoding | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 263 ms | 1044 ms | - |
-| laozhang.ai | `/v1/messages` | 4 | 100.0% | 100.0% | 234 ms | 340 ms | - |
-| laozhang.ai | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 217 ms | 246 ms | - |
-| OhMyGPT | `/v1/messages` | 4 | 100.0% | 100.0% | 212 ms | 239 ms | - |
-| OhMyGPT | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 178 ms | 184 ms | - |
-| OpenRouter | `/v1/messages` | 4 | 100.0% | 100.0% | 131 ms | 158 ms | - |
-| OpenRouter | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 71 ms | 74 ms | - |
-| PackyAPI（原 PackyCode） | `/v1/messages` | 4 | 100.0% | 100.0% | 584 ms | 606 ms | - |
-| PackyAPI（原 PackyCode） | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 295 ms | 404 ms | - |
-| QCode | `/v1/messages` | 4 | 100.0% | 100.0% | 349 ms | 388 ms | - |
-| QCode | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 340 ms | 383 ms | - |
-| TeamoRouter | `/v1/messages` | 1 | 100.0% | 100.0% | 652 ms | 652 ms | 100.0% (1) |
-| TeamoRouter | `/v1/chat/completions` | 1 | 100.0% | 100.0% | 624 ms | 624 ms | 100.0% (1) |
-| YesCode | `/v1/messages` | 4 | 100.0% | 100.0% | 548 ms | 617 ms | - |
-| YesCode | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 504 ms | 582 ms | - |
-| 云雾AI | `/v1/messages` | 4 | 100.0% | 100.0% | 465 ms | 484 ms | - |
-| 云雾AI | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 469 ms | 491 ms | - |
-| 灵眸AI | `/v1/messages` | 4 | 100.0% | 100.0% | 802 ms | 810 ms | - |
-| 灵眸AI | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 606 ms | 636 ms | - |
-| 灵芽 API | `/v1/messages` | 4 | 100.0% | 100.0% | 961 ms | 1412 ms | - |
-| 灵芽 API | `/v1/chat/completions` | 4 | 100.0% | 100.0% | 1210 ms | 2955 ms | - |
+| 302.AI | `/v1/messages` | 5 | 100.0% | 100.0% | 557 ms | 2737 ms | - |
+| 302.AI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 560 ms | 1778 ms | - |
+| 88code | `/v1/messages` | 5 | 100.0% | 100.0% | 667 ms | 743 ms | - |
+| 88code | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 474 ms | 613 ms | - |
+| AIHubMix | `/v1/messages` | 5 | 100.0% | 100.0% | 130 ms | 180 ms | - |
+| AIHubMix | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 117 ms | 138 ms | - |
+| AnyRouter | `/v1/messages` | 5 | 100.0% | 100.0% | 1697 ms | 1867 ms | - |
+| APIMart | `/v1/messages` | 5 | 100.0% | 100.0% | 351 ms | 366 ms | - |
+| APIMart | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 283 ms | 303 ms | - |
+| APINebula | `/v1/messages` | 5 | 100.0% | 100.0% | 212 ms | 274 ms | - |
+| APINebula | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 280 ms | 300 ms | - |
+| CloseAI | `/v1/messages` | 5 | 100.0% | 100.0% | 264 ms | 353 ms | - |
+| CloseAI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 116 ms | 222 ms | - |
+| CoderPlan | `/v1/messages` | 5 | 100.0% | 100.0% | 704 ms | 729 ms | - |
+| CoderPlan | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 690 ms | 1114 ms | - |
+| DuckCoding | `/v1/messages` | 5 | 100.0% | 100.0% | 363 ms | 1264 ms | - |
+| DuckCoding | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 240 ms | 1044 ms | - |
+| laozhang.ai | `/v1/messages` | 5 | 100.0% | 100.0% | 178 ms | 340 ms | - |
+| laozhang.ai | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 208 ms | 246 ms | - |
+| OhMyGPT | `/v1/messages` | 5 | 100.0% | 100.0% | 208 ms | 239 ms | - |
+| OhMyGPT | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 105 ms | 184 ms | - |
+| OpenRouter | `/v1/messages` | 5 | 100.0% | 100.0% | 107 ms | 158 ms | - |
+| OpenRouter | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 67 ms | 74 ms | - |
+| PackyAPI（原 PackyCode） | `/v1/messages` | 5 | 100.0% | 100.0% | 481 ms | 606 ms | - |
+| PackyAPI（原 PackyCode） | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 164 ms | 404 ms | - |
+| QCode | `/v1/messages` | 5 | 100.0% | 100.0% | 278 ms | 388 ms | - |
+| QCode | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 312 ms | 383 ms | - |
+| TeamoRouter | `/v1/messages` | 2 | 100.0% | 100.0% | 555 ms | 652 ms | 100.0% (2) |
+| TeamoRouter | `/v1/chat/completions` | 2 | 100.0% | 100.0% | 538 ms | 624 ms | 100.0% (2) |
+| YesCode | `/v1/messages` | 5 | 100.0% | 100.0% | 548 ms | 691 ms | - |
+| YesCode | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 497 ms | 582 ms | - |
+| 云雾AI | `/v1/messages` | 5 | 100.0% | 100.0% | 465 ms | 496 ms | - |
+| 云雾AI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 459 ms | 491 ms | - |
+| 灵眸AI | `/v1/messages` | 5 | 100.0% | 100.0% | 780 ms | 810 ms | - |
+| 灵眸AI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 579 ms | 636 ms | - |
+| 灵芽 API | `/v1/messages` | 5 | 100.0% | 100.0% | 951 ms | 1412 ms | - |
+| 灵芽 API | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 919 ms | 2955 ms | - |
 | 神马中转API | `/v1/messages` | 0 | - | - | - | - | - |
 | 神马中转API | `/v1/chat/completions` | 0 | - | - | - | - | - |
 <!-- MONITOR30:END -->
