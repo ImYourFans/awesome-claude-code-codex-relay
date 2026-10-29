@@ -33,8 +33,10 @@ def p(vals, q):
     return f"{vals[k] * 1000:.0f} ms"
 
 
-def stats(rows, pid, kind, auth):
-    rs = [r for r in rows if r["provider"] == pid and r["kind"] == kind and r["auth"] == auth]
+def stats(rows, pid, kind, auth, base=None):
+    # 只统计打到当前 providers.json 里这个 base 的样本：换过探测域名的家，旧域名的历史不混进来
+    rs = [r for r in rows if r["provider"] == pid and r["kind"] == kind and r["auth"] == auth
+          and (base is None or r["url"].startswith(base.rstrip("/") + "/"))]
     n = len(rs)
     up = sum(1 for r in rs if r["gateway_up"])
     ok = sum(1 for r in rs if (r["ok"] if auth else r["endpoint_ok"]))
@@ -70,16 +72,17 @@ def directory_table(lang):
 def monitor_table(lang, days):
     rows = load_rows(days)
     if lang == "zh":
-        head = f"| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | TTFB P50 | TTFB P95 | 认证请求成功率 |\n|---|---|---|---|---|---|---|---|\n"
+        head = f"| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | 应答延迟 P50 | 应答延迟 P95 | 认证请求成功率 |\n|---|---|---|---|---|---|---|---|\n"
     else:
-        head = f"| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | TTFB P50 | TTFB P95 | Authenticated success |\n|---|---|---|---|---|---|---|---|\n"
+        head = f"| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | Reject latency P50 | Reject latency P95 | Authenticated success |\n|---|---|---|---|---|---|---|---|\n"
     out = head
     for pr in PROVIDERS:
         for kind, label in (("anthropic", "/v1/messages"), ("openai", "/v1/chat/completions")):
             if not pr.get("anthropic_base" if kind == "anthropic" else "openai_base"):
                 continue
-            n, up, ok, lat = stats(rows, pr["id"], kind, False)
-            an, aup, aok, _ = stats(rows, pr["id"], kind, True)
+            base = pr["anthropic_base" if kind == "anthropic" else "openai_base"]
+            n, up, ok, lat = stats(rows, pr["id"], kind, False, base)
+            an, aup, aok, _ = stats(rows, pr["id"], kind, True, base)
             auth_cell = "-" if an == 0 else f"{pct(aok, an)} ({an})"
             out += f"| {pr['name']} | `{label}` | {n} | {pct(up, n)} | {pct(ok, n)} | {p(lat, 0.5)} | {p(lat, 0.95)} | {auth_cell} |\n"
     return out

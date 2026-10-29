@@ -12,7 +12,7 @@ A directory of API relays (proxies) for Claude Code and Codex CLI, with automate
 Using the Anthropic and OpenAI APIs directly from mainland China (and some other regions) runs into account, payment and network problems, so people route through a relay. There are many relays, information is scattered and changes fast, and most "recommendation lists" are either affiliate-driven or written by one of the relays. This repo does two things only:
 
 1. **Directory**: each provider's website, whether it publishes Claude Code and Codex setup docs, payment methods, pricing page, sign-up status, with a verification date and sources per row.
-2. **Availability probes**: GitHub Actions hits every provider's API endpoints every 6 hours and records whether the gateway answered, whether the endpoint is valid, and time to first byte.
+2. **Availability probes**: GitHub Actions hits every provider's API endpoints every 6 hours and records whether the gateway answered, whether the endpoint is valid, and how fast it rejects an unauthenticated request.
 
 Not done here: judging model authenticity (see "Verify a relay yourself"), comparing prices (every provider quotes differently; read their pricing page), star ratings.
 
@@ -35,7 +35,7 @@ Not done here: judging model authenticity (see "Verify a relay yourself"), compa
 | **OpenRouter** | [openrouter.ai](https://openrouter.ai) | [yes](https://openrouter.ai/docs/guides/guides/claude-code-integration) | [yes](https://openrouter.ai/docs/cookbook/coding-agents/codex-cli) | card, Alipay, USDC | [pricing](https://openrouter.ai/pricing) | open | Model IDs carry a vendor prefix (anthropic/…); platform fee on credit purchases (5.5% Standard); Codex needs wire_api=responses | 2026-10-29 |
 | **PackyAPI（原 PackyCode）** | [www.packyapi.com](https://www.packyapi.com) | [yes](https://docs.packyapi.com/docs/cli/2-claude.html) | [yes](https://docs.packyapi.com/docs/cli/3-codex.html) | Alipay, WeChat Pay | [pricing](https://www.packyapi.ai/pricing) | open | Separate token groups for Claude Code (CC) and Codex; docs also list slb-v1.api.fan; both packyapi.com and packyapi.ai are in use | 2026-10-29 |
 | **QCode** | [qcode.cc](https://qcode.cc) | [yes](https://docs.qcode.cc/docs/getting-started/installation) | [yes](https://docs.qcode.cc/docs/ide/codex) | Alipay, WeChat Pay, card, Apple Pay, crypto | [pricing](https://qcode.cc/pricing) | open | Monthly plans with daily quotas plus 7-day pay-as-you-go packs; asia.qcode.cc endpoint recommended for mainland users; Claude models only via the Anthropic-style endpoint | 2026-10-29 |
-| **TeamoRouter** (maintainer) | [teamorouter.com](https://teamorouter.com) | [yes](https://teamorouter.com/zh/docs/install-claude-code) | [yes](https://teamorouter.com/zh/docs/install-codex) | Alipay, card, USDT | [pricing](https://teamorouter.com/zh/pricing) | open | Pay-as-you-go; one key serves both the Anthropic-compatible and OpenAI-compatible endpoints; maintained by this repo's owner | 2026-10-29 |
+| **TeamoRouter** (maintainer) | [teamorouter.com](https://teamorouter.com) | [yes](https://teamorouter.com/zh/docs/install-claude-code) | [yes](https://teamorouter.com/zh/docs/install-codex) | Alipay, card, USDT | [pricing](https://teamorouter.com/zh/pricing) | open | Pay-as-you-go; one key serves both the Anthropic-compatible and OpenAI-compatible endpoints; api.teamorouter.com is the global entry and api.teamorouter.cn the China entry, the probe hits the former; maintained by this repo's owner | 2026-10-29 |
 | **YesCode** | [co.yes.vg](https://co.yes.vg) | no | no | - | - | unverified | Client-rendered site; docs and pricing are not readable statically; base URLs taken from the official setup-claude-code.sh and setup-codex.sh scripts (Codex uses wire_api=responses) | 2026-10-29 |
 | **云雾AI** | [yunwu.ai](https://yunwu.ai) | [yes](https://s.apifox.cn/apidoc/docs-site/5427167/doc-7010249) | [yes](https://s.apifox.cn/apidoc/docs-site/5427167/doc-7422014) | - | - | open | Tokens must use the Claude Code group; default and reverse-engineered groups lack tool calling; Codex needs wire_api=responses; prices live inside the console and payment methods are not on public pages | 2026-10-29 |
 | **灵眸AI** | [api.lmuai.ai](https://api.lmuai.ai) | [yes](https://docs.lmuai.ai/docs/tools/claude-code) | [yes](https://docs.lmuai.ai/docs/tools/codex-cli-mac) | - | [pricing](https://api.lmuai.ai/pricing) | open | Monthly plans split by Claude and GPT, plus balance-based pay-as-you-go; one key per group, cross-group calls return 400; docs warn proxies may drop streams | 2026-10-29 |
@@ -48,9 +48,9 @@ Rows are sorted by name, not ranked. "yes" in the Claude Code / Codex CLI column
 ## Availability probes
 
 <!-- MONITOR:START -->
-Last 7 days · updated 2026-10-29 13:00 UTC · vantage: GitHub Actions (US) · every 6 hours
+Last 7 days · updated 2026-10-29 13:32 UTC · vantage: GitHub Actions (US) · every 6 hours
 
-| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | TTFB P50 | TTFB P95 | Authenticated success |
+| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | Reject latency P50 | Reject latency P95 | Authenticated success |
 |---|---|---|---|---|---|---|---|
 | 302.AI | `/v1/messages` | 3 | 100.0% | 100.0% | 566 ms | 2737 ms | - |
 | 302.AI | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 565 ms | 1778 ms | - |
@@ -79,8 +79,8 @@ Last 7 days · updated 2026-10-29 13:00 UTC · vantage: GitHub Actions (US) · e
 | PackyAPI（原 PackyCode） | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 164 ms | 404 ms | - |
 | QCode | `/v1/messages` | 3 | 100.0% | 100.0% | 349 ms | 388 ms | - |
 | QCode | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 312 ms | 383 ms | - |
-| TeamoRouter | `/v1/messages` | 3 | 100.0% | 100.0% | 2069 ms | 2700 ms | 100.0% (3) |
-| TeamoRouter | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 841 ms | 1228 ms | 100.0% (3) |
+| TeamoRouter | `/v1/messages` | 0 | - | - | - | - | - |
+| TeamoRouter | `/v1/chat/completions` | 0 | - | - | - | - | - |
 | YesCode | `/v1/messages` | 3 | 100.0% | 100.0% | 548 ms | 617 ms | - |
 | YesCode | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 504 ms | 582 ms | - |
 | 云雾AI | `/v1/messages` | 3 | 100.0% | 100.0% | 465 ms | 484 ms | - |
@@ -99,7 +99,7 @@ Last 7 days · updated 2026-10-29 13:00 UTC · vantage: GitHub Actions (US) · e
 <!-- MONITOR30:START -->
 Last 30 days
 
-| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | TTFB P50 | TTFB P95 | Authenticated success |
+| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | Reject latency P50 | Reject latency P95 | Authenticated success |
 |---|---|---|---|---|---|---|---|
 | 302.AI | `/v1/messages` | 3 | 100.0% | 100.0% | 566 ms | 2737 ms | - |
 | 302.AI | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 565 ms | 1778 ms | - |
@@ -128,8 +128,8 @@ Last 30 days
 | PackyAPI（原 PackyCode） | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 164 ms | 404 ms | - |
 | QCode | `/v1/messages` | 3 | 100.0% | 100.0% | 349 ms | 388 ms | - |
 | QCode | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 312 ms | 383 ms | - |
-| TeamoRouter | `/v1/messages` | 3 | 100.0% | 100.0% | 2069 ms | 2700 ms | 100.0% (3) |
-| TeamoRouter | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 841 ms | 1228 ms | 100.0% (3) |
+| TeamoRouter | `/v1/messages` | 0 | - | - | - | - | - |
+| TeamoRouter | `/v1/chat/completions` | 0 | - | - | - | - | - |
 | YesCode | `/v1/messages` | 3 | 100.0% | 100.0% | 548 ms | 617 ms | - |
 | YesCode | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 504 ms | 582 ms | - |
 | 云雾AI | `/v1/messages` | 3 | 100.0% | 100.0% | 465 ms | 484 ms | - |
@@ -150,7 +150,7 @@ Last 30 days
 - **Unauthenticated probe** (every provider): a minimal request with a dummy key to `anthropic_base/v1/messages` and `openai_base/v1/chat/completions`.
   - **Gateway answered**: curl got any HTTP response below 500.
   - **Endpoint valid**: the response was 400 / 401 / 403 / 422 / 429, i.e. the endpoint exists and validated the request. 404 / 405 count as gateway up but wrong path.
-  - **TTFB**: time to first byte, P50 / P95 over samples where the gateway answered.
+  - **Reject latency**: time from sending the request to the gateway's rejection (usually 401), P50 / P95 over samples where the gateway answered. It measures network distance from the probe node plus the gateway's auth overhead. It is **not** model time-to-first-token and involves no inference.
 - **Authenticated probe** (only TeamoRouter, the maintainer's own key): a real request with `max_tokens=8`; success means HTTP 200 and "ok" in the reply. `-` for other providers means not tested, not failed.
 - The vantage point is a GitHub Actions runner in the US. **This measures reachability and latency from overseas, not the experience inside China.** Run the same script elsewhere (`PROBE_VANTAGE=<region> python3 scripts/probe.py`) and open a PR with the results.
 - One sample per run, four runs a day. Percentages swing with few samples; the 30-day table is steadier.

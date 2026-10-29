@@ -35,7 +35,7 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | **OpenRouter** | [openrouter.ai](https://openrouter.ai) | [是](https://openrouter.ai/docs/guides/guides/claude-code-integration) | [是](https://openrouter.ai/docs/cookbook/coding-agents/codex-cli) | 信用卡、支付宝、USDC | [价格](https://openrouter.ai/pricing) | 开放 | 模型 ID 带厂商前缀（anthropic/…）；购买额度收平台费（Standard 5.5%）；Codex 需 wire_api=responses | 2026-10-29 |
 | **PackyAPI（原 PackyCode）** | [www.packyapi.com](https://www.packyapi.com) | [是](https://docs.packyapi.com/docs/cli/2-claude.html) | [是](https://docs.packyapi.com/docs/cli/3-codex.html) | 支付宝、微信 | [价格](https://www.packyapi.ai/pricing) | 开放 | Claude Code 和 Codex 要分别用 CC 分组和 Codex 分组的令牌；文档另给优化线路 slb-v1.api.fan；官网 packyapi.com 与 packyapi.ai 并存 | 2026-10-29 |
 | **QCode** | [qcode.cc](https://qcode.cc) | [是](https://docs.qcode.cc/docs/getting-started/installation) | [是](https://docs.qcode.cc/docs/ide/codex) | 支付宝、微信、信用卡、Apple Pay、加密货币 | [价格](https://qcode.cc/pricing) | 开放 | 个人套餐按日额度包月，另有 7 天有效的按量包；大陆推荐 asia.qcode.cc 入口；Claude 模型只走 Anthropic 接口 | 2026-10-29 |
-| **TeamoRouter**（本仓库维护者） | [teamorouter.com](https://teamorouter.com) | [是](https://teamorouter.com/zh/docs/install-claude-code) | [是](https://teamorouter.com/zh/docs/install-codex) | 支付宝、信用卡、USDT | [价格](https://teamorouter.com/zh/pricing) | 开放 | 按量计费；同一个 Key 同时走 Anthropic 兼容和 OpenAI 兼容端点；本仓库维护者 | 2026-10-29 |
+| **TeamoRouter**（本仓库维护者） | [teamorouter.com](https://teamorouter.com) | [是](https://teamorouter.com/zh/docs/install-claude-code) | [是](https://teamorouter.com/zh/docs/install-codex) | 支付宝、信用卡、USDT | [价格](https://teamorouter.com/zh/pricing) | 开放 | 按量计费；同一个 Key 同时走 Anthropic 兼容和 OpenAI 兼容端点；海外入口 api.teamorouter.com，国内入口 api.teamorouter.cn，本表从海外节点探前者；本仓库维护者 | 2026-10-29 |
 | **YesCode** | [co.yes.vg](https://co.yes.vg) | 否 | 否 | - | - | 未核实 | 官网为纯前端应用，文档和价格页需站内渲染；Base URL 取自官方脚本 setup-claude-code.sh 和 setup-codex.sh（Codex 用 wire_api=responses） | 2026-10-29 |
 | **云雾AI** | [yunwu.ai](https://yunwu.ai) | [是](https://s.apifox.cn/apidoc/docs-site/5427167/doc-7010249) | [是](https://s.apifox.cn/apidoc/docs-site/5427167/doc-7422014) | - | - | 开放 | 令牌须选 Claude Code 专属分组，default 与逆向分组不支持工具调用；Codex 需 wire_api=responses；价格在控制台内，公开页面未列支付方式 | 2026-10-29 |
 | **灵眸AI** | [api.lmuai.ai](https://api.lmuai.ai) | [是](https://docs.lmuai.ai/docs/tools/claude-code) | [是](https://docs.lmuai.ai/docs/tools/codex-cli-mac) | - | [价格](https://api.lmuai.ai/pricing) | 开放 | 月卡按平台分 Claude 和 GPT 两类，也支持余额按量；一个 Key 对应一个分组，跨组会 400；文档称挂代理可能断流 | 2026-10-29 |
@@ -48,9 +48,9 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 ## 可用性探测
 
 <!-- MONITOR:START -->
-最近 7 天 · 更新于 2026-10-29 13:00 UTC · 探测节点：GitHub Actions（美国）· 每 6 小时一轮
+最近 7 天 · 更新于 2026-10-29 13:32 UTC · 探测节点：GitHub Actions（美国）· 每 6 小时一轮
 
-| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | TTFB P50 | TTFB P95 | 认证请求成功率 |
+| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | 应答延迟 P50 | 应答延迟 P95 | 认证请求成功率 |
 |---|---|---|---|---|---|---|---|
 | 302.AI | `/v1/messages` | 3 | 100.0% | 100.0% | 566 ms | 2737 ms | - |
 | 302.AI | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 565 ms | 1778 ms | - |
@@ -79,8 +79,8 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | PackyAPI（原 PackyCode） | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 164 ms | 404 ms | - |
 | QCode | `/v1/messages` | 3 | 100.0% | 100.0% | 349 ms | 388 ms | - |
 | QCode | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 312 ms | 383 ms | - |
-| TeamoRouter | `/v1/messages` | 3 | 100.0% | 100.0% | 2069 ms | 2700 ms | 100.0% (3) |
-| TeamoRouter | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 841 ms | 1228 ms | 100.0% (3) |
+| TeamoRouter | `/v1/messages` | 0 | - | - | - | - | - |
+| TeamoRouter | `/v1/chat/completions` | 0 | - | - | - | - | - |
 | YesCode | `/v1/messages` | 3 | 100.0% | 100.0% | 548 ms | 617 ms | - |
 | YesCode | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 504 ms | 582 ms | - |
 | 云雾AI | `/v1/messages` | 3 | 100.0% | 100.0% | 465 ms | 484 ms | - |
@@ -99,7 +99,7 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 <!-- MONITOR30:START -->
 最近 30 天
 
-| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | TTFB P50 | TTFB P95 | 认证请求成功率 |
+| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | 应答延迟 P50 | 应答延迟 P95 | 认证请求成功率 |
 |---|---|---|---|---|---|---|---|
 | 302.AI | `/v1/messages` | 3 | 100.0% | 100.0% | 566 ms | 2737 ms | - |
 | 302.AI | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 565 ms | 1778 ms | - |
@@ -128,8 +128,8 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | PackyAPI（原 PackyCode） | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 164 ms | 404 ms | - |
 | QCode | `/v1/messages` | 3 | 100.0% | 100.0% | 349 ms | 388 ms | - |
 | QCode | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 312 ms | 383 ms | - |
-| TeamoRouter | `/v1/messages` | 3 | 100.0% | 100.0% | 2069 ms | 2700 ms | 100.0% (3) |
-| TeamoRouter | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 841 ms | 1228 ms | 100.0% (3) |
+| TeamoRouter | `/v1/messages` | 0 | - | - | - | - | - |
+| TeamoRouter | `/v1/chat/completions` | 0 | - | - | - | - | - |
 | YesCode | `/v1/messages` | 3 | 100.0% | 100.0% | 548 ms | 617 ms | - |
 | YesCode | `/v1/chat/completions` | 3 | 100.0% | 100.0% | 504 ms | 582 ms | - |
 | 云雾AI | `/v1/messages` | 3 | 100.0% | 100.0% | 465 ms | 484 ms | - |
@@ -150,7 +150,7 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 - **无 Key 探测**（所有家）：向 `anthropic_base/v1/messages` 和 `openai_base/v1/chat/completions` 各发一个带假 Key 的最小请求。
   - **网关应答率**：curl 拿到任何 5xx 以下的 HTTP 响应，说明网关在线。
   - **端点有效率**：响应是 400 / 401 / 403 / 422 / 429 之一，说明端点存在并且校验了请求。404 或 405 算网关在线但端点路径不对。
-  - **TTFB**：从发起请求到收到第一个字节的时间，取网关有应答的样本算 P50 / P95。
+  - **应答延迟**：从发起请求到网关返回拒绝（通常是 401）的时间，取网关有应答的样本算 P50 / P95。它量的是节点到网关的网络距离加网关鉴权的开销，**不是模型首字延迟**，不包含任何推理。
 - **认证探测**（只有维护者自己有 Key 的 TeamoRouter）：真实请求 `max_tokens=8`，200 且回包里有 "ok" 算成功。这一列其他家是 `-`，不是失败。
 - 节点在 GitHub Actions 的美国机房，**反映的是海外到各家网关的可达性和延迟，不等于国内体验**。想要国内节点的数据，可以在自己机器上跑同一脚本（`PROBE_VANTAGE=cn-xxx python3 scripts/probe.py`）并提 PR。
 - 一轮一个样本，每 6 小时一轮，一天 4 个样本。样本少的时候百分比波动大，看 30 天的表更稳。

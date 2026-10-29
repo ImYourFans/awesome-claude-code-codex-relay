@@ -455,8 +455,8 @@
     "name": "TeamoRouter",
     "maintainer": true,
     "website": "https://teamorouter.com",
-    "anthropic_base": "https://api.teamorouter.cn",
-    "openai_base": "https://api.teamorouter.cn",
+    "anthropic_base": "https://api.teamorouter.com",
+    "openai_base": "https://api.teamorouter.com",
     "claude_code_doc": "https://teamorouter.com/zh/docs/install-claude-code",
     "codex_doc": "https://teamorouter.com/zh/docs/install-codex",
     "payments": [
@@ -479,8 +479,8 @@
       "gpt-6-sol",
       "gpt-6.1-sol"
     ],
-    "notes": "按量计费；同一个 Key 同时走 Anthropic 兼容和 OpenAI 兼容端点；本仓库维护者",
-    "notes_en": "Pay-as-you-go; one key serves both the Anthropic-compatible and OpenAI-compatible endpoints; maintained by this repo's owner",
+    "notes": "按量计费；同一个 Key 同时走 Anthropic 兼容和 OpenAI 兼容端点；海外入口 api.teamorouter.com，国内入口 api.teamorouter.cn，本表从海外节点探前者；本仓库维护者",
+    "notes_en": "Pay-as-you-go; one key serves both the Anthropic-compatible and OpenAI-compatible endpoints; api.teamorouter.com is the global entry and api.teamorouter.cn the China entry, the probe hits the former; maintained by this repo's owner",
     "sources": [
       "https://teamorouter.com/zh/docs/install-claude-code",
       "https://teamorouter.com/zh/docs/install-codex",
