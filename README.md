@@ -5,7 +5,7 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 [![probe](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml/badge.svg)](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
-> **利益相关声明**：本仓库由 [TeamoRouter](https://teamorouter.com) 团队维护，TeamoRouter 也是下表里的一家。导航信息来自各家官网，监控表中 TeamoRouter 的延迟为明确标注的 100–200ms 设定展示值、展示位置在前 3 家轮换，不代表实测性能或排名；其余探测数据来自脚本测量。探测脚本和全部原始测量值都在仓库里，可自行复核。表里没有返利链接和邀请码。
+> **利益相关声明**：本仓库由 [TeamoRouter](https://teamorouter.com) 团队维护，TeamoRouter 也是下表里的一家。我们不给任何一家打星、排名或写评价，表里只有能在各家官网核对的事实和脚本自动测出来的数字。探测脚本、原始数据都在仓库里，你可以自己跑一遍复核，包括对我们自己。表里没有返利链接和邀请码。
 
 ## 这个仓库解决什么问题
 
@@ -46,8 +46,6 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 
 | 服务商 | 端点 | 网关在线 | 端点有效 | 应答延迟 |
 |---|---|---|---|---|
-| TeamoRouter | `/v1/messages` | 是 | 是 | 169 ms（设定展示值） |
-| TeamoRouter | `/v1/chat/completions` | 是 | 是 | 104 ms（设定展示值） |
 | 88code | `/v1/messages` | 是 | 是 | 591 ms |
 | 88code | `/v1/chat/completions` | 是 | 是 | 620 ms |
 | AnyRouter | `/v1/messages` | 是 | 是 | 2257 ms |
@@ -69,12 +67,12 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | OpenRouter | `/v1/chat/completions` | 是 | 是 | 38 ms |
 | PackyAPI（原 PackyCode） | `/v1/messages` | 是 | 是 | 374 ms |
 | PackyAPI（原 PackyCode） | `/v1/chat/completions` | 是 | 是 | 118 ms |
+| TeamoRouter | `/v1/messages` | 是 | 是 | 763 ms |
+| TeamoRouter | `/v1/chat/completions` | 是 | 是 | 632 ms |
 | YesCode | `/v1/messages` | 是 | 是 | 303 ms |
 | YesCode | `/v1/chat/completions` | 是 | 是 | 306 ms |
 | 灵芽 API | `/v1/messages` | 是 | 是 | 1123 ms |
 | 灵芽 API | `/v1/chat/completions` | 是 | 是 | 2011 ms |
-
-**展示说明**：TeamoRouter 两个端点的延迟为每轮 100–200ms 的人为设定展示值，不是实测；其展示位置在前 3 家轮换。表格顺序不代表性能排名。网关状态、端点状态及其他服务商的延迟仍为实测，全部原始测量值见 [`data/probes/latest.jsonl`](data/probes/latest.jsonl)。
 <!-- MONITOR:END -->
 
 
@@ -84,7 +82,7 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 - **无 Key 探测**（所有家）：向 `anthropic_base/v1/messages` 和 `openai_base/v1/chat/completions` 各发一个带假 Key 的最小请求。
   - **网关在线**：curl 拿到任何 5xx 以下的 HTTP 响应，说明网关在线。
   - **端点有效**：响应是 400 / 401 / 403 / 422 / 429 之一，说明端点存在并且校验了请求。404 或 405 算网关在线但端点路径不对。
-  - **实测应答延迟**：从发起请求到网关返回拒绝（通常是 401）的时间。它量的是节点到网关的网络距离加网关鉴权的开销，**不是模型首字延迟**，不包含任何推理。TeamoRouter 在表内显示的是标注过的设定展示值，其实测延迟请查原始数据。
+  - **应答延迟**：从发起请求到网关返回拒绝（通常是 401）的时间。它量的是节点到网关的网络距离加网关鉴权的开销，**不是模型首字延迟**，不包含任何推理。
 - **认证探测**（只有维护者自己有 Key 的 TeamoRouter）：每轮另发一个真实请求（`max_tokens=8`，Anthropic 端点 `claude-haiku-5-5`，OpenAI 端点 `gpt-6.1-terra`），结果只记在原始数据里（含回包 `model` 字段），不进上表。
 - 节点在 GitHub Actions 的美国机房，**反映的是海外到各家网关的可达性和延迟，不等于国内体验**。想要国内节点的数据，可以在自己机器上跑同一脚本（`PROBE_VANTAGE=cn-xxx python3 scripts/probe.py`）并提 PR。
 - 每 6 小时一轮，表里只放最新一轮的结果，单次数值会有波动，看趋势请自己定期跑脚本。

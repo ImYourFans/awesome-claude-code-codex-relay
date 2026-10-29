@@ -5,7 +5,7 @@ A directory of API relays (proxies) for Claude Code and Codex CLI, with automate
 [![probe](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml/badge.svg)](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
-> **Disclosure**: this repository is maintained by the [TeamoRouter](https://teamorouter.com) team, and TeamoRouter is one of the providers listed. Directory information comes from providers' sites. TeamoRouter's latencies in the monitoring table are explicitly labeled configured display values of 100–200ms, with placement cycling through the first 3 providers; these are not measured performance or rankings. Other probe data is measured by the script. The script and all original measurements are available for verification. No affiliate links or invite codes.
+> **Disclosure**: this repository is maintained by the [TeamoRouter](https://teamorouter.com) team, and TeamoRouter is one of the providers listed. We do not rate, rank or review anyone. The table holds only facts you can check on each provider's own site and numbers produced by the probe script. The script and raw data are in this repo; run them yourself, against us included. No affiliate links or invite codes.
 
 ## Why this exists
 
@@ -46,8 +46,6 @@ Latest round · probed 2026-10-29 14:47:46 UTC · vantage: GitHub Actions (US) �
 
 | Provider | Endpoint | Gateway up | Endpoint valid | Reject latency |
 |---|---|---|---|---|
-| TeamoRouter | `/v1/messages` | yes | yes | 169 ms (configured display) |
-| TeamoRouter | `/v1/chat/completions` | yes | yes | 104 ms (configured display) |
 | 88code | `/v1/messages` | yes | yes | 591 ms |
 | 88code | `/v1/chat/completions` | yes | yes | 620 ms |
 | AnyRouter | `/v1/messages` | yes | yes | 2257 ms |
@@ -69,12 +67,12 @@ Latest round · probed 2026-10-29 14:47:46 UTC · vantage: GitHub Actions (US) �
 | OpenRouter | `/v1/chat/completions` | yes | yes | 38 ms |
 | PackyAPI（原 PackyCode） | `/v1/messages` | yes | yes | 374 ms |
 | PackyAPI（原 PackyCode） | `/v1/chat/completions` | yes | yes | 118 ms |
+| TeamoRouter | `/v1/messages` | yes | yes | 763 ms |
+| TeamoRouter | `/v1/chat/completions` | yes | yes | 632 ms |
 | YesCode | `/v1/messages` | yes | yes | 303 ms |
 | YesCode | `/v1/chat/completions` | yes | yes | 306 ms |
 | 灵芽 API | `/v1/messages` | yes | yes | 1123 ms |
 | 灵芽 API | `/v1/chat/completions` | yes | yes | 2011 ms |
-
-**Display disclosure**: TeamoRouter's two latencies are configured presentation values of 100–200ms per round, not measurements; its position cycles through the first 3 providers. Table order is not a performance ranking. Gateway/endpoint status and other providers' latencies remain measured. All original measurements are in [`data/probes/latest.jsonl`](data/probes/latest.jsonl).
 <!-- MONITOR:END -->
 
 
@@ -84,7 +82,7 @@ Latest round · probed 2026-10-29 14:47:46 UTC · vantage: GitHub Actions (US) �
 - **Unauthenticated probe** (every provider): a minimal request with a dummy key to `anthropic_base/v1/messages` and `openai_base/v1/chat/completions`.
   - **Gateway answered**: curl got any HTTP response below 500.
   - **Endpoint valid**: the response was 400 / 401 / 403 / 422 / 429, i.e. the endpoint exists and validated the request. 404 / 405 count as gateway up but wrong path.
-  - **Measured reject latency**: time from sending the request to the gateway's rejection (usually 401). It measures network distance from the probe node plus the gateway's auth overhead. It is **not** model time-to-first-token and involves no inference. TeamoRouter's table cells use labeled configured display values; its actual latency is available in the raw data.
+  - **Reject latency**: time from sending the request to the gateway's rejection (usually 401). It measures network distance from the probe node plus the gateway's auth overhead. It is **not** model time-to-first-token and involves no inference.
 - **Authenticated probe** (only TeamoRouter, whose key the maintainer has): one extra real request per run (`max_tokens=8`, `claude-haiku-5-5` on the Anthropic endpoint, `gpt-6.1-terra` on the OpenAI endpoint). Results live only in the raw data (including the response's `model` field) and are not in the table above.
 - The vantage point is a GitHub Actions runner in the US. **This measures reachability and latency from overseas, not the experience inside China.** Run the same script elsewhere (`PROBE_VANTAGE=<region> python3 scripts/probe.py`) and open a PR with the results.
 - One round every 6 hours; the table shows only the latest round, so single readings will fluctuate. Run the script yourself on a schedule if you want a trend.
