@@ -42,37 +42,37 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 ## 可用性探测
 
 <!-- MONITOR:START -->
-最新一轮 · 探测时间 2026-10-29 14:42:09 UTC · 探测节点：GitHub Actions（美国）· 每 6 小时一轮，只展示最新一轮
+最新一轮 · 探测时间 2026-10-29 14:47:46 UTC · 探测节点：GitHub Actions（美国）· 每 6 小时一轮，只展示最新一轮
 
 | 服务商 | 端点 | 网关在线 | 端点有效 | 应答延迟 |
 |---|---|---|---|---|
 | TeamoRouter | `/v1/messages` | 是 | 是 | 169 ms（设定展示值） |
 | TeamoRouter | `/v1/chat/completions` | 是 | 是 | 104 ms（设定展示值） |
-| 88code | `/v1/messages` | 是 | 是 | 782 ms |
-| 88code | `/v1/chat/completions` | 是 | 是 | 700 ms |
-| AnyRouter | `/v1/messages` | 是 | 是 | 1727 ms |
-| APIMart | `/v1/messages` | 是 | 是 | 351 ms |
+| 88code | `/v1/messages` | 是 | 是 | 591 ms |
+| 88code | `/v1/chat/completions` | 是 | 是 | 620 ms |
+| AnyRouter | `/v1/messages` | 是 | 是 | 2257 ms |
+| APIMart | `/v1/messages` | 是 | 是 | 333 ms |
 | APIMart | `/v1/chat/completions` | 是 | 是 | 290 ms |
-| APINebula | `/v1/messages` | 是 | 是 | 207 ms |
-| APINebula | `/v1/chat/completions` | 是 | 是 | 213 ms |
-| CloseAI | `/v1/messages` | 是 | 是 | 129 ms |
-| CloseAI | `/v1/chat/completions` | 是 | 是 | 96 ms |
-| CoderPlan | `/v1/messages` | 是 | 是 | 727 ms |
-| CoderPlan | `/v1/chat/completions` | 是 | 是 | 898 ms |
-| DuckCoding | `/v1/messages` | 是 | 是 | 468 ms |
-| DuckCoding | `/v1/chat/completions` | 是 | 是 | 1067 ms |
-| laozhang.ai | `/v1/messages` | 是 | 是 | 225 ms |
-| laozhang.ai | `/v1/chat/completions` | 是 | 是 | 196 ms |
-| OhMyGPT | `/v1/messages` | 是 | 是 | 229 ms |
-| OhMyGPT | `/v1/chat/completions` | 是 | 是 | 168 ms |
-| OpenRouter | `/v1/messages` | 是 | 是 | 29 ms |
-| OpenRouter | `/v1/chat/completions` | 是 | 是 | 28 ms |
-| PackyAPI（原 PackyCode） | `/v1/messages` | 是 | 是 | 349 ms |
-| PackyAPI（原 PackyCode） | `/v1/chat/completions` | 是 | 是 | 99 ms |
-| YesCode | `/v1/messages` | 是 | 是 | 1809 ms |
-| YesCode | `/v1/chat/completions` | 是 | 是 | 593 ms |
-| 灵芽 API | `/v1/messages` | 是 | 是 | 1096 ms |
-| 灵芽 API | `/v1/chat/completions` | 是 | 是 | 756 ms |
+| APINebula | `/v1/messages` | 是 | 是 | 232 ms |
+| APINebula | `/v1/chat/completions` | 是 | 是 | 243 ms |
+| CloseAI | `/v1/messages` | 是 | 是 | 148 ms |
+| CloseAI | `/v1/chat/completions` | 是 | 是 | 143 ms |
+| CoderPlan | `/v1/messages` | 是 | 是 | 765 ms |
+| CoderPlan | `/v1/chat/completions` | 是 | 是 | 761 ms |
+| DuckCoding | `/v1/messages` | 是 | 是 | 1266 ms |
+| DuckCoding | `/v1/chat/completions` | 是 | 是 | 1099 ms |
+| laozhang.ai | `/v1/messages` | 是 | 是 | 230 ms |
+| laozhang.ai | `/v1/chat/completions` | 是 | 是 | 237 ms |
+| OhMyGPT | `/v1/messages` | 是 | 是 | 254 ms |
+| OhMyGPT | `/v1/chat/completions` | 是 | 是 | 204 ms |
+| OpenRouter | `/v1/messages` | 是 | 是 | 47 ms |
+| OpenRouter | `/v1/chat/completions` | 是 | 是 | 38 ms |
+| PackyAPI（原 PackyCode） | `/v1/messages` | 是 | 是 | 374 ms |
+| PackyAPI（原 PackyCode） | `/v1/chat/completions` | 是 | 是 | 118 ms |
+| YesCode | `/v1/messages` | 是 | 是 | 303 ms |
+| YesCode | `/v1/chat/completions` | 是 | 是 | 306 ms |
+| 灵芽 API | `/v1/messages` | 是 | 是 | 1123 ms |
+| 灵芽 API | `/v1/chat/completions` | 是 | 是 | 2011 ms |
 
 **展示说明**：TeamoRouter 两个端点的延迟为每轮 100–200ms 的人为设定展示值，不是实测；其展示位置在前 3 家轮换。表格顺序不代表性能排名。网关状态、端点状态及其他服务商的延迟仍为实测，全部原始测量值见 [`data/probes/latest.jsonl`](data/probes/latest.jsonl)。
 <!-- MONITOR:END -->
