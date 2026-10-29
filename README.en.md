@@ -42,50 +42,50 @@ Rows are sorted by name, not ranked. "yes" in the Claude Code / Codex CLI column
 ## Availability probes
 
 <!-- MONITOR:START -->
-Last 7 days · updated 2026-10-29 13:45 UTC · vantage: GitHub Actions (US) · every 6 hours
+Latest round · probed 2026-10-29 13:52 UTC · vantage: GitHub Actions (US) · every 6 hours, latest round only
 
-| Provider | Endpoint | Samples | Gateway answered | Endpoint valid | Reject latency P50 | Reject latency P95 |
-|---|---|---|---|---|---|---|
-| 88code | `/v1/messages` | 5 | 100.0% | 100.0% | 667 ms | 743 ms |
-| 88code | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 474 ms | 613 ms |
-| AnyRouter | `/v1/messages` | 5 | 100.0% | 100.0% | 1697 ms | 1867 ms |
-| APIMart | `/v1/messages` | 5 | 100.0% | 100.0% | 351 ms | 366 ms |
-| APIMart | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 283 ms | 303 ms |
-| APINebula | `/v1/messages` | 5 | 100.0% | 100.0% | 212 ms | 274 ms |
-| APINebula | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 280 ms | 300 ms |
-| CloseAI | `/v1/messages` | 5 | 100.0% | 100.0% | 264 ms | 353 ms |
-| CloseAI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 116 ms | 222 ms |
-| CoderPlan | `/v1/messages` | 5 | 100.0% | 100.0% | 704 ms | 729 ms |
-| CoderPlan | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 690 ms | 1114 ms |
-| DuckCoding | `/v1/messages` | 5 | 100.0% | 100.0% | 363 ms | 1264 ms |
-| DuckCoding | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 240 ms | 1044 ms |
-| laozhang.ai | `/v1/messages` | 5 | 100.0% | 100.0% | 178 ms | 340 ms |
-| laozhang.ai | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 208 ms | 246 ms |
-| OhMyGPT | `/v1/messages` | 5 | 100.0% | 100.0% | 208 ms | 239 ms |
-| OhMyGPT | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 105 ms | 184 ms |
-| OpenRouter | `/v1/messages` | 5 | 100.0% | 100.0% | 107 ms | 158 ms |
-| OpenRouter | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 67 ms | 74 ms |
-| PackyAPI（原 PackyCode） | `/v1/messages` | 5 | 100.0% | 100.0% | 481 ms | 606 ms |
-| PackyAPI（原 PackyCode） | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 164 ms | 404 ms |
-| TeamoRouter | `/v1/messages` | 2 | 100.0% | 100.0% | 555 ms | 652 ms |
-| TeamoRouter | `/v1/chat/completions` | 2 | 100.0% | 100.0% | 538 ms | 624 ms |
-| YesCode | `/v1/messages` | 5 | 100.0% | 100.0% | 548 ms | 691 ms |
-| YesCode | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 497 ms | 582 ms |
-| 灵芽 API | `/v1/messages` | 5 | 100.0% | 100.0% | 951 ms | 1412 ms |
-| 灵芽 API | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 919 ms | 2955 ms |
+| Provider | Endpoint | Gateway up | Endpoint valid | Reject latency |
+|---|---|---|---|---|
+| 88code | `/v1/messages` | - | - | - |
+| 88code | `/v1/chat/completions` | - | - | - |
+| AnyRouter | `/v1/messages` | - | - | - |
+| APIMart | `/v1/messages` | - | - | - |
+| APIMart | `/v1/chat/completions` | - | - | - |
+| APINebula | `/v1/messages` | - | - | - |
+| APINebula | `/v1/chat/completions` | - | - | - |
+| CloseAI | `/v1/messages` | - | - | - |
+| CloseAI | `/v1/chat/completions` | - | - | - |
+| CoderPlan | `/v1/messages` | - | - | - |
+| CoderPlan | `/v1/chat/completions` | - | - | - |
+| DuckCoding | `/v1/messages` | - | - | - |
+| DuckCoding | `/v1/chat/completions` | - | - | - |
+| laozhang.ai | `/v1/messages` | - | - | - |
+| laozhang.ai | `/v1/chat/completions` | - | - | - |
+| OhMyGPT | `/v1/messages` | - | - | - |
+| OhMyGPT | `/v1/chat/completions` | - | - | - |
+| OpenRouter | `/v1/messages` | - | - | - |
+| OpenRouter | `/v1/chat/completions` | - | - | - |
+| PackyAPI（原 PackyCode） | `/v1/messages` | - | - | - |
+| PackyAPI（原 PackyCode） | `/v1/chat/completions` | - | - | - |
+| TeamoRouter | `/v1/messages` | - | - | - |
+| TeamoRouter | `/v1/chat/completions` | - | - | - |
+| YesCode | `/v1/messages` | - | - | - |
+| YesCode | `/v1/chat/completions` | - | - | - |
+| 灵芽 API | `/v1/messages` | - | - | - |
+| 灵芽 API | `/v1/chat/completions` | - | - | - |
 <!-- MONITOR:END -->
 
 
 ### Method
 
-- Script: [`scripts/probe.py`](scripts/probe.py); raw data: [`data/probes/`](data/probes/), one JSON object per line.
+- Script: [`scripts/probe.py`](scripts/probe.py); raw data: [`data/probes/latest.jsonl`](data/probes/latest.jsonl), one JSON object per line. Overwritten every run; the repo keeps only the latest round, no history.
 - **Unauthenticated probe** (every provider): a minimal request with a dummy key to `anthropic_base/v1/messages` and `openai_base/v1/chat/completions`.
   - **Gateway answered**: curl got any HTTP response below 500.
   - **Endpoint valid**: the response was 400 / 401 / 403 / 422 / 429, i.e. the endpoint exists and validated the request. 404 / 405 count as gateway up but wrong path.
-  - **Reject latency**: time from sending the request to the gateway's rejection (usually 401), P50 / P95 over samples where the gateway answered. It measures network distance from the probe node plus the gateway's auth overhead. It is **not** model time-to-first-token and involves no inference.
+  - **Reject latency**: time from sending the request to the gateway's rejection (usually 401). It measures network distance from the probe node plus the gateway's auth overhead. It is **not** model time-to-first-token and involves no inference.
 - **Authenticated probe** (only TeamoRouter, whose key the maintainer has): one extra real request per run (`max_tokens=8`, `claude-haiku-5-5` on the Anthropic endpoint, `gpt-6.1-terra` on the OpenAI endpoint). Results live only in the raw data (including the response's `model` field) and are not in the table above.
 - The vantage point is a GitHub Actions runner in the US. **This measures reachability and latency from overseas, not the experience inside China.** Run the same script elsewhere (`PROBE_VANTAGE=<region> python3 scripts/probe.py`) and open a PR with the results.
-- One sample per run, four runs a day. Percentages swing with few samples.
+- One round every 6 hours; the table shows only the latest round, so single readings will fluctuate. Run the script yourself on a schedule if you want a trend.
 
 ## Verify a relay yourself
 

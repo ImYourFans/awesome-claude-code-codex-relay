@@ -17,4 +17,4 @@ Add one object to `providers.json` (see existing entries). Every value must be v
 
 ## 监控数据 / Probe data
 
-`data/probes/*.jsonl` 由 GitHub Actions 自动写入，不要手改。探测方法见 README「监控方法」一节。如果你在其他地区跑了同一脚本（`PROBE_VANTAGE=<地区>` 并设置 `PROBE_TIMEOUT`），欢迎把结果文件以 PR 提交到 `data/probes/vantage-<地区>/`。
+`data/probes/latest.jsonl` 由 GitHub Actions 每轮覆盖写入，不要手改。探测方法见 README「监控方法」一节。如果你在其他地区跑了同一脚本（`PROBE_VANTAGE=<地区>` 并设置 `PROBE_TIMEOUT`），欢迎把结果文件以 PR 提交到 `data/probes/vantage-<地区>/`。

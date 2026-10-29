@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Probe every provider in providers.json and append one JSON line per (provider, endpoint) to data/probes/YYYY-MM.jsonl.
+"""Probe every provider in providers.json and write one JSON line per (provider, endpoint) to data/probes/latest.jsonl.
+The file is rewritten on every run: the repo keeps only the latest round, no history.
 
 Two kinds of probe:
 - unauthenticated (all providers): POST a minimal body with a dummy key. Any HTTP reply below 500
@@ -13,7 +14,7 @@ import json, os, subprocess, sys, datetime, pathlib, tempfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PROVIDERS = json.loads((ROOT / "providers.json").read_text(encoding="utf-8"))
 NOW = datetime.datetime.now(datetime.timezone.utc)
-OUT = ROOT / "data" / "probes" / f"{NOW:%Y-%m}.jsonl"
+OUT = ROOT / "data" / "probes" / "latest.jsonl"
 OUT.parent.mkdir(parents=True, exist_ok=True)
 VANTAGE = os.environ.get("PROBE_VANTAGE", "github-actions")
 PROMPT = "Reply with the single word: ok"
@@ -94,6 +95,8 @@ def probe_provider(p):
 
 def main():
     only = sys.argv[1:]  # optional provider ids
+    if not only:
+        OUT.write_text("", encoding="utf-8")  # 整轮探测：清空上一轮，只留最新
     for p in PROVIDERS:
         if only and p["id"] not in only:
             continue

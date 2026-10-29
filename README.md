@@ -42,50 +42,50 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 ## 可用性探测
 
 <!-- MONITOR:START -->
-最近 7 天 · 更新于 2026-10-29 13:45 UTC · 探测节点：GitHub Actions（美国）· 每 6 小时一轮
+最新一轮 · 探测时间 2026-10-29 13:52 UTC · 探测节点：GitHub Actions（美国）· 每 6 小时一轮，只展示最新一轮
 
-| 服务商 | 端点 | 样本数 | 网关应答率 | 端点有效率 | 应答延迟 P50 | 应答延迟 P95 |
-|---|---|---|---|---|---|---|
-| 88code | `/v1/messages` | 5 | 100.0% | 100.0% | 667 ms | 743 ms |
-| 88code | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 474 ms | 613 ms |
-| AnyRouter | `/v1/messages` | 5 | 100.0% | 100.0% | 1697 ms | 1867 ms |
-| APIMart | `/v1/messages` | 5 | 100.0% | 100.0% | 351 ms | 366 ms |
-| APIMart | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 283 ms | 303 ms |
-| APINebula | `/v1/messages` | 5 | 100.0% | 100.0% | 212 ms | 274 ms |
-| APINebula | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 280 ms | 300 ms |
-| CloseAI | `/v1/messages` | 5 | 100.0% | 100.0% | 264 ms | 353 ms |
-| CloseAI | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 116 ms | 222 ms |
-| CoderPlan | `/v1/messages` | 5 | 100.0% | 100.0% | 704 ms | 729 ms |
-| CoderPlan | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 690 ms | 1114 ms |
-| DuckCoding | `/v1/messages` | 5 | 100.0% | 100.0% | 363 ms | 1264 ms |
-| DuckCoding | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 240 ms | 1044 ms |
-| laozhang.ai | `/v1/messages` | 5 | 100.0% | 100.0% | 178 ms | 340 ms |
-| laozhang.ai | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 208 ms | 246 ms |
-| OhMyGPT | `/v1/messages` | 5 | 100.0% | 100.0% | 208 ms | 239 ms |
-| OhMyGPT | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 105 ms | 184 ms |
-| OpenRouter | `/v1/messages` | 5 | 100.0% | 100.0% | 107 ms | 158 ms |
-| OpenRouter | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 67 ms | 74 ms |
-| PackyAPI（原 PackyCode） | `/v1/messages` | 5 | 100.0% | 100.0% | 481 ms | 606 ms |
-| PackyAPI（原 PackyCode） | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 164 ms | 404 ms |
-| TeamoRouter | `/v1/messages` | 2 | 100.0% | 100.0% | 555 ms | 652 ms |
-| TeamoRouter | `/v1/chat/completions` | 2 | 100.0% | 100.0% | 538 ms | 624 ms |
-| YesCode | `/v1/messages` | 5 | 100.0% | 100.0% | 548 ms | 691 ms |
-| YesCode | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 497 ms | 582 ms |
-| 灵芽 API | `/v1/messages` | 5 | 100.0% | 100.0% | 951 ms | 1412 ms |
-| 灵芽 API | `/v1/chat/completions` | 5 | 100.0% | 100.0% | 919 ms | 2955 ms |
+| 服务商 | 端点 | 网关在线 | 端点有效 | 应答延迟 |
+|---|---|---|---|---|
+| 88code | `/v1/messages` | - | - | - |
+| 88code | `/v1/chat/completions` | - | - | - |
+| AnyRouter | `/v1/messages` | - | - | - |
+| APIMart | `/v1/messages` | - | - | - |
+| APIMart | `/v1/chat/completions` | - | - | - |
+| APINebula | `/v1/messages` | - | - | - |
+| APINebula | `/v1/chat/completions` | - | - | - |
+| CloseAI | `/v1/messages` | - | - | - |
+| CloseAI | `/v1/chat/completions` | - | - | - |
+| CoderPlan | `/v1/messages` | - | - | - |
+| CoderPlan | `/v1/chat/completions` | - | - | - |
+| DuckCoding | `/v1/messages` | - | - | - |
+| DuckCoding | `/v1/chat/completions` | - | - | - |
+| laozhang.ai | `/v1/messages` | - | - | - |
+| laozhang.ai | `/v1/chat/completions` | - | - | - |
+| OhMyGPT | `/v1/messages` | - | - | - |
+| OhMyGPT | `/v1/chat/completions` | - | - | - |
+| OpenRouter | `/v1/messages` | - | - | - |
+| OpenRouter | `/v1/chat/completions` | - | - | - |
+| PackyAPI（原 PackyCode） | `/v1/messages` | - | - | - |
+| PackyAPI（原 PackyCode） | `/v1/chat/completions` | - | - | - |
+| TeamoRouter | `/v1/messages` | - | - | - |
+| TeamoRouter | `/v1/chat/completions` | - | - | - |
+| YesCode | `/v1/messages` | - | - | - |
+| YesCode | `/v1/chat/completions` | - | - | - |
+| 灵芽 API | `/v1/messages` | - | - | - |
+| 灵芽 API | `/v1/chat/completions` | - | - | - |
 <!-- MONITOR:END -->
 
 
 ### 监控方法
 
-- 脚本：[`scripts/probe.py`](scripts/probe.py)，原始数据：[`data/probes/`](data/probes/)，每行一条 JSON。
+- 脚本：[`scripts/probe.py`](scripts/probe.py)，原始数据：[`data/probes/latest.jsonl`](data/probes/latest.jsonl)，每行一条 JSON。每轮覆盖，仓库只保留最新一轮，不存历史。
 - **无 Key 探测**（所有家）：向 `anthropic_base/v1/messages` 和 `openai_base/v1/chat/completions` 各发一个带假 Key 的最小请求。
-  - **网关应答率**：curl 拿到任何 5xx 以下的 HTTP 响应，说明网关在线。
-  - **端点有效率**：响应是 400 / 401 / 403 / 422 / 429 之一，说明端点存在并且校验了请求。404 或 405 算网关在线但端点路径不对。
-  - **应答延迟**：从发起请求到网关返回拒绝（通常是 401）的时间，取网关有应答的样本算 P50 / P95。它量的是节点到网关的网络距离加网关鉴权的开销，**不是模型首字延迟**，不包含任何推理。
+  - **网关在线**：curl 拿到任何 5xx 以下的 HTTP 响应，说明网关在线。
+  - **端点有效**：响应是 400 / 401 / 403 / 422 / 429 之一，说明端点存在并且校验了请求。404 或 405 算网关在线但端点路径不对。
+  - **应答延迟**：从发起请求到网关返回拒绝（通常是 401）的时间。它量的是节点到网关的网络距离加网关鉴权的开销，**不是模型首字延迟**，不包含任何推理。
 - **认证探测**（只有维护者自己有 Key 的 TeamoRouter）：每轮另发一个真实请求（`max_tokens=8`，Anthropic 端点 `claude-haiku-5-5`，OpenAI 端点 `gpt-6.1-terra`），结果只记在原始数据里（含回包 `model` 字段），不进上表。
 - 节点在 GitHub Actions 的美国机房，**反映的是海外到各家网关的可达性和延迟，不等于国内体验**。想要国内节点的数据，可以在自己机器上跑同一脚本（`PROBE_VANTAGE=cn-xxx python3 scripts/probe.py`）并提 PR。
-- 一轮一个样本，每 6 小时一轮，一天 4 个样本。样本少的时候百分比波动大。
+- 每 6 小时一轮，表里只放最新一轮的结果，单次数值会有波动，看趋势请自己定期跑脚本。
 
 ## 自己怎么验一家中转站
 
