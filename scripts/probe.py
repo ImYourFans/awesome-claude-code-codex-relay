@@ -42,19 +42,28 @@ def curl(url, headers, body):
     return int(http), p.returncode, float(tls), float(ttfb), float(total), resp, (p.stderr or "").strip()
 
 
-def record(provider, kind, endpoint, url, auth, http, rc, tls, ttfb, total, resp, err):
+def record(provider, kind, endpoint, url, auth, http, rc, tls, ttfb, total, resp, err, model=None):
     gateway_up = rc == 0 and 0 < http < 500
     endpoint_ok = rc == 0 and http in ENDPOINT_OK
     ok = None
     note = ""
+    model_returned = None
     if auth:
         ok = rc == 0 and http == 200 and "ok" in resp.lower()
+        try:
+            # 回包里的 model 字段原样记下来，读者可以对照请求的模型（Anthropic 和 OpenAI 格式都在顶层）
+            model_returned = json.loads(resp).get("model")
+        except Exception:
+            model_returned = None
     if not (gateway_up and endpoint_ok) or (auth and not ok):
         note = (err or resp).replace("\n", " ")[:160]
     row = {"ts": NOW.strftime("%Y-%m-%dT%H:%M:%SZ"), "vantage": VANTAGE, "provider": provider["id"],
            "kind": kind, "endpoint": endpoint, "url": url, "auth": auth, "http": http, "curl_exit": rc,
            "t_tls": round(tls, 3), "t_ttfb": round(ttfb, 3), "t_total": round(total, 3),
            "gateway_up": gateway_up, "endpoint_ok": endpoint_ok, "ok": ok, "note": note}
+    if auth:
+        row["model_requested"] = model
+        row["model_returned"] = model_returned
     with OUT.open("a", encoding="utf-8") as f:
         f.write(json.dumps(row, ensure_ascii=False) + "\n")
     print(f"{row['ts']} {provider['id']:<14} {endpoint:<10} auth={int(auth)} http={http} rc={rc} ttfb={ttfb:.2f}s {note[:60]}")
@@ -68,14 +77,19 @@ def probe_provider(p):
         body = {"model": model, "max_tokens": 8, "messages": [{"role": "user", "content": PROMPT}]}
         record(p, "anthropic", "messages", url, False, *curl(url, ["x-api-key: probe-no-key"], body))
         if key:
-            record(p, "anthropic", "messages", url, True, *curl(url, [f"x-api-key: {key}"], body))
+            # 认证探测用 probe_models 指定的模型（便宜、快的那档），没写就用宣称列表第一个
+            model = (p.get("probe_models") or {}).get("anthropic", model)
+            body = dict(body, model=model)
+            record(p, "anthropic", "messages", url, True, *curl(url, [f"x-api-key: {key}"], body), model=model)
     if p.get("openai_base"):
         url = p["openai_base"].rstrip("/") + "/v1/chat/completions"
         model = (p.get("openai_models_claimed") or ["gpt-6-sol"])[0]
         body = {"model": model, "max_tokens": 8, "messages": [{"role": "user", "content": PROMPT}]}
         record(p, "openai", "chat", url, False, *curl(url, ["Authorization: Bearer probe-no-key"], body))
         if key:
-            record(p, "openai", "chat", url, True, *curl(url, [f"Authorization: Bearer {key}"], body))
+            model = (p.get("probe_models") or {}).get("openai", model)
+            body = dict(body, model=model)
+            record(p, "openai", "chat", url, True, *curl(url, [f"Authorization: Bearer {key}"], body), model=model)
 
 
 def main():

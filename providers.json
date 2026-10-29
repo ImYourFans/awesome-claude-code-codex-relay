@@ -479,6 +479,7 @@
       "gpt-6-sol",
       "gpt-6.1-sol"
     ],
+    "probe_models": {"anthropic": "claude-haiku-5-5", "openai": "gpt-6.1-terra"},
     "notes": "按量计费；同一个 Key 同时走 Anthropic 兼容和 OpenAI 兼容端点；海外入口 api.teamorouter.com，国内入口 api.teamorouter.cn，本表从海外节点探前者；本仓库维护者",
     "notes_en": "Pay-as-you-go; one key serves both the Anthropic-compatible and OpenAI-compatible endpoints; api.teamorouter.com is the global entry and api.teamorouter.cn the China entry, the probe hits the former; maintained by this repo's owner",
     "sources": [

@@ -48,7 +48,7 @@ Rows are sorted by name, not ranked. "yes" in the Claude Code / Codex CLI column
 ## Availability probes
 
 <!-- MONITOR:START -->
-Last 7 days · updated 2026-10-29 13:34 UTC · vantage: GitHub Actions (US) · every 6 hours
+Last 7 days · updated 2026-10-29 13:38 UTC · vantage: GitHub Actions (US) · every 6 hours
 
 | Provider | Endpoint | Samples | Gateway answered | Endpoint valid | Reject latency P50 | Reject latency P95 | Authenticated success |
 |---|---|---|---|---|---|---|---|
@@ -151,7 +151,7 @@ Last 30 days
   - **Gateway answered**: curl got any HTTP response below 500.
   - **Endpoint valid**: the response was 400 / 401 / 403 / 422 / 429, i.e. the endpoint exists and validated the request. 404 / 405 count as gateway up but wrong path.
   - **Reject latency**: time from sending the request to the gateway's rejection (usually 401), P50 / P95 over samples where the gateway answered. It measures network distance from the probe node plus the gateway's auth overhead. It is **not** model time-to-first-token and involves no inference.
-- **Authenticated probe** (only TeamoRouter, the maintainer's own key): a real request with `max_tokens=8`; success means HTTP 200 and "ok" in the reply. `-` for other providers means not tested, not failed.
+- **Authenticated probe** (only TeamoRouter, whose key the maintainer has): a real request with `max_tokens=8`, `claude-haiku-5-5` on the Anthropic endpoint and `gpt-6.1-terra` on the OpenAI endpoint (`probe_models` in `providers.json`); 200 with "ok" in the body counts as success. Raw rows record the requested model and the `model` field of the response. For other providers this column is `-`, not a failure.
 - The vantage point is a GitHub Actions runner in the US. **This measures reachability and latency from overseas, not the experience inside China.** Run the same script elsewhere (`PROBE_VANTAGE=<region> python3 scripts/probe.py`) and open a PR with the results.
 - One sample per run, four runs a day. Percentages swing with few samples; the 30-day table is steadier.
 
