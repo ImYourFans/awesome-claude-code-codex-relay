@@ -44,37 +44,37 @@ Rows are sorted by name, not ranked. "yes" in the Claude Code / Codex CLI column
 ## Availability probes
 
 <!-- MONITOR:START -->
-Latest round · probed 2026-10-29 13:53:15 UTC · vantage: GitHub Actions (US) · every 6 hours, latest round only
+Latest round · probed 2026-10-29 14:42:09 UTC · vantage: GitHub Actions (US) · every 6 hours, latest round only
 
 | Provider | Endpoint | Gateway up | Endpoint valid | Reject latency |
 |---|---|---|---|---|
-| 88code | `/v1/messages` | yes | yes | 913 ms |
-| 88code | `/v1/chat/completions` | yes | yes | 552 ms |
-| AnyRouter | `/v1/messages` | yes | yes | 1487 ms |
-| APIMart | `/v1/messages` | yes | yes | 603 ms |
-| APIMart | `/v1/chat/completions` | yes | yes | 299 ms |
-| APINebula | `/v1/messages` | yes | yes | 321 ms |
-| APINebula | `/v1/chat/completions` | yes | yes | 295 ms |
-| CloseAI | `/v1/messages` | yes | yes | 147 ms |
-| CloseAI | `/v1/chat/completions` | yes | yes | 239 ms |
-| CoderPlan | `/v1/messages` | yes | yes | 716 ms |
-| CoderPlan | `/v1/chat/completions` | yes | yes | 713 ms |
-| DuckCoding | `/v1/messages` | yes | yes | 1325 ms |
-| DuckCoding | `/v1/chat/completions` | yes | yes | 395 ms |
-| laozhang.ai | `/v1/messages` | yes | yes | 221 ms |
-| laozhang.ai | `/v1/chat/completions` | yes | yes | 226 ms |
-| OhMyGPT | `/v1/messages` | yes | yes | 211 ms |
-| OhMyGPT | `/v1/chat/completions` | yes | yes | 182 ms |
-| OpenRouter | `/v1/messages` | yes | yes | 74 ms |
-| OpenRouter | `/v1/chat/completions` | yes | yes | 50 ms |
-| PackyAPI（原 PackyCode） | `/v1/messages` | yes | yes | 623 ms |
-| PackyAPI（原 PackyCode） | `/v1/chat/completions` | yes | yes | 154 ms |
-| TeamoRouter | `/v1/messages` | yes | yes | 835 ms |
-| TeamoRouter | `/v1/chat/completions` | yes | yes | 597 ms |
-| YesCode | `/v1/messages` | yes | yes | 406 ms |
-| YesCode | `/v1/chat/completions` | yes | yes | 403 ms |
-| 灵芽 API | `/v1/messages` | yes | yes | 1287 ms |
-| 灵芽 API | `/v1/chat/completions` | yes | yes | 973 ms |
+| 88code | `/v1/messages` | yes | yes | 782 ms |
+| 88code | `/v1/chat/completions` | yes | yes | 700 ms |
+| AnyRouter | `/v1/messages` | yes | yes | 1727 ms |
+| APIMart | `/v1/messages` | yes | yes | 351 ms |
+| APIMart | `/v1/chat/completions` | yes | yes | 290 ms |
+| APINebula | `/v1/messages` | yes | yes | 207 ms |
+| APINebula | `/v1/chat/completions` | yes | yes | 213 ms |
+| CloseAI | `/v1/messages` | yes | yes | 129 ms |
+| CloseAI | `/v1/chat/completions` | yes | yes | 96 ms |
+| CoderPlan | `/v1/messages` | yes | yes | 727 ms |
+| CoderPlan | `/v1/chat/completions` | yes | yes | 898 ms |
+| DuckCoding | `/v1/messages` | yes | yes | 468 ms |
+| DuckCoding | `/v1/chat/completions` | yes | yes | 1067 ms |
+| laozhang.ai | `/v1/messages` | yes | yes | 225 ms |
+| laozhang.ai | `/v1/chat/completions` | yes | yes | 196 ms |
+| OhMyGPT | `/v1/messages` | yes | yes | 229 ms |
+| OhMyGPT | `/v1/chat/completions` | yes | yes | 168 ms |
+| OpenRouter | `/v1/messages` | yes | yes | 29 ms |
+| OpenRouter | `/v1/chat/completions` | yes | yes | 28 ms |
+| PackyAPI（原 PackyCode） | `/v1/messages` | yes | yes | 349 ms |
+| PackyAPI（原 PackyCode） | `/v1/chat/completions` | yes | yes | 99 ms |
+| TeamoRouter | `/v1/messages` | yes | yes | 811 ms |
+| TeamoRouter | `/v1/chat/completions` | yes | yes | 629 ms |
+| YesCode | `/v1/messages` | yes | yes | 1809 ms |
+| YesCode | `/v1/chat/completions` | yes | yes | 593 ms |
+| 灵芽 API | `/v1/messages` | yes | yes | 1096 ms |
+| 灵芽 API | `/v1/chat/completions` | yes | yes | 756 ms |
 <!-- MONITOR:END -->
 
 

@@ -3,7 +3,7 @@
 > **演示数据：本页所有延迟和名次均由程序模拟，不是实测成绩，也不构成服务商推荐。**
 > **Demo only: all latencies and ranks below are synthetic, not measurements or recommendations.**
 
-生成时间 / Generated: 2026-10-29T14:40:58Z · 每 6 小时更新 / refreshed every 6 hours
+生成时间 / Generated: 2026-10-29T14:42:31Z · 每 6 小时更新 / refreshed every 6 hours
 
 规则：TeamoRouter 的模拟延迟每轮为 100–200ms，模拟名次在第 1–3 名轮换。其他服务商的数值同样为虚构。
 Rules: TeamoRouter receives a synthetic latency of 100–200ms and cycles through ranks 1–3. Other providers' values are also fictional.
