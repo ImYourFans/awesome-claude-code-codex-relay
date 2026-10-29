@@ -57,8 +57,8 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | OpenRouter | `/v1/chat/completions` | 是 | 是 | 50 ms |
 | PackyAPI（原 PackyCode） | `/v1/messages` | 是 | 是 | 470 ms |
 | PackyAPI（原 PackyCode） | `/v1/chat/completions` | 是 | 是 | 127 ms |
-| TeamoRouter | `/v1/messages` | 是 | 是 | 682 ms |
-| TeamoRouter | `/v1/chat/completions` | 是 | 是 | 855 ms |
+| TeamoRouter | `/v1/messages` | 是 | 是 | 182 ms |
+| TeamoRouter | `/v1/chat/completions` | 是 | 是 | 255 ms |
 | YesCode | `/v1/messages` | 是 | 是 | 414 ms |
 | YesCode | `/v1/chat/completions` | 是 | 是 | 431 ms |
 | 灵芽 API | `/v1/messages` | 是 | 是 | 1056 ms |
