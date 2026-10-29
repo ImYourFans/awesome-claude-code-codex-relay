@@ -38,7 +38,9 @@ Rows are sorted by name, not ranked. "yes" in the Claude Code / Codex CLI column
 ## Availability probes
 
 <!-- MONITOR:START -->
-Latest round · probed 2026-10-29 14:55:47 UTC · vantage: GitHub Actions (US) · every 6 hours, latest round only
+### Overseas node (GitHub Actions, US)
+
+Probed 2026-10-29 14:55:47 UTC · every 6 hours, latest round only
 
 | Provider | Endpoint | Gateway up | Endpoint valid | Reject latency |
 |---|---|---|---|---|
@@ -72,7 +74,7 @@ Latest round · probed 2026-10-29 14:55:47 UTC · vantage: GitHub Actions (US) �
   - **Endpoint valid**: the response was 400 / 401 / 403 / 422 / 429, i.e. the endpoint exists and validated the request. 404 / 405 count as gateway up but wrong path.
   - **Reject latency**: time from sending the request to the gateway's rejection (usually 401). It measures network distance from the probe node plus the gateway's auth overhead. It is **not** model time-to-first-token and involves no inference.
 - **Authenticated probe** (only TeamoRouter, whose key the maintainer has): one extra real request per run (`max_tokens=8`, `claude-haiku-5-5` on the Anthropic endpoint, `gpt-6.1-terra` on the OpenAI endpoint). Results live only in the raw data (including the response's `model` field) and are not in the table above.
-- The vantage point is a GitHub Actions runner in the US. **This measures reachability and latency from overseas, not the experience inside China.** Run the same script elsewhere (`PROBE_VANTAGE=<region> python3 scripts/probe.py`) and open a PR with the results.
+- One table per node: the China node is a mainland machine on a direct connection (`scripts/cron-cn.sh`, writes `data/probes/latest-cn.jsonl`); the overseas node is a GitHub Actions runner in the US (writes `data/probes/latest.jsonl`). **Large differences between the two tables for the same provider are expected**: Cloudflare-fronted gateways are fast from overseas and often take seconds from inside China; China-optimised routes are the reverse. Read the table that matches where you are.
 - One round every 6 hours; the table shows only the latest round, so single readings will fluctuate. Run the script yourself on a schedule if you want a trend.
 
 ## Verify a relay yourself

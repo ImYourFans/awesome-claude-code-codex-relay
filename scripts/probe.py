@@ -14,7 +14,8 @@ import json, os, subprocess, sys, datetime, pathlib, tempfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PROVIDERS = json.loads((ROOT / "providers.json").read_text(encoding="utf-8"))
 NOW = datetime.datetime.now(datetime.timezone.utc)
-OUT = ROOT / "data" / "probes" / "latest.jsonl"
+# 美国节点（GitHub Actions）写 latest.jsonl；其他节点用 PROBE_FILE=latest-cn 这样的名字各写各的，互不覆盖
+OUT = ROOT / "data" / "probes" / (os.environ.get("PROBE_FILE", "latest") + ".jsonl")
 OUT.parent.mkdir(parents=True, exist_ok=True)
 VANTAGE = os.environ.get("PROBE_VANTAGE", "github-actions")
 PROMPT = "Reply with the single word: ok"

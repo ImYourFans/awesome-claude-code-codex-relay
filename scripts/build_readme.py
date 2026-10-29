@@ -8,8 +8,8 @@ PROVIDERS = json.loads((ROOT / "providers.json").read_text(encoding="utf-8"))
 NOW = datetime.datetime.now(datetime.timezone.utc)
 
 
-def load_rows():
-    f = ROOT / "data" / "probes" / "latest.jsonl"
+def load_rows(name="latest"):
+    f = ROOT / "data" / "probes" / f"{name}.jsonl"
     if not f.exists():
         return []
     return [json.loads(l) for l in f.read_text(encoding="utf-8").splitlines() if l.strip()]
@@ -59,8 +59,7 @@ def directory_table(lang):
     return out
 
 
-def monitor_table(lang):
-    rows = load_rows()
+def monitor_table(lang, rows):
     if lang == "zh":
         head = "| 服务商 | 端点 | 网关在线 | 端点有效 | 应答延迟 |\n|---|---|---|---|---|\n"
         yes, no, na = "是", "否", "-"
@@ -98,11 +97,22 @@ def main():
         path = ROOT / fname
         text = path.read_text(encoding="utf-8")
         text = splice(text, "DIRECTORY", directory_table(lang))
-        rows = load_rows()
-        ts = rows[-1]["ts"].replace("T", " ").replace("Z", " UTC") if rows else stamp
-        intro = (f"最新一轮 · 探测时间 {ts} · 探测节点：GitHub Actions（美国）· 每 6 小时一轮，只展示最新一轮\n\n" if lang == "zh"
-                 else f"Latest round · probed {ts} · vantage: GitHub Actions (US) · every 6 hours, latest round only\n\n")
-        text = splice(text, "MONITOR", intro + monitor_table(lang))
+        # 节点顺序：国内在前（有数据才出），美国在后。每个节点各自一张最新一轮的表。
+        vantages = [
+            ("latest-cn", "国内节点（中国大陆，运营商宽带直连）", "China node (mainland broadband, direct)", "每 6 小时一轮，只展示最新一轮", "every 6 hours, latest round only"),
+            ("latest", "海外节点（GitHub Actions，美国）", "Overseas node (GitHub Actions, US)", "每 6 小时一轮，只展示最新一轮", "every 6 hours, latest round only"),
+        ]
+        block = ""
+        for name, zh_label, en_label, zh_tail, en_tail in vantages:
+            rows = load_rows(name)
+            if not rows:
+                continue
+            ts = rows[-1]["ts"].replace("T", " ").replace("Z", " UTC")
+            if lang == "zh":
+                block += f"### {zh_label}\n\n探测时间 {ts} · {zh_tail}\n\n" + monitor_table(lang, rows) + "\n"
+            else:
+                block += f"### {en_label}\n\nProbed {ts} · {en_tail}\n\n" + monitor_table(lang, rows) + "\n"
+        text = splice(text, "MONITOR", block)
         path.write_text(text, encoding="utf-8")
         print("updated", fname)
 
