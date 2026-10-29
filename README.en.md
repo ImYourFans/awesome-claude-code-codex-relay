@@ -23,12 +23,8 @@ Not done here: judging model authenticity (see "Verify a relay yourself"), compa
 |---|---|---|---|---|---|---|---|---|
 | **88code** | [www.88code.ai](https://www.88code.ai) | [yes](https://docs.88code.org/ClaudeCode/Windows.html) | [yes](https://docs.88code.org/Codex/Windows.html) | - | [pricing](https://docs.88code.org/88code/pricing.html) | open | Mainly monthly plans with daily quotas, plus pay-as-you-go packs; docs state at most 4 concurrent clients per account; 88code.org redirects to 88code.ai | 2026-10-29 |
 | **AnyRouter** | [anyrouter.top](https://anyrouter.top) | [yes](https://docs.anyrouter.top/) | no | - | - | unverified | Community (free) relay; docs say sign-up credits, no payment; registration page sits behind a CAPTCHA and the homepage could not be read | 2026-10-29 |
-| **APIMart** | [apimart.ai](https://apimart.ai) | [yes](https://docs.apimart.ai/en/integrations/dev-tool/claude-code.md) | [yes](https://docs.apimart.ai/en/integrations/dev-tool/codex-cli.md) | card, Alipay, PayPal, crypto | [pricing](https://apimart.ai/pricing) | open | Pay-as-you-go with tiered member discounts; thinking variants use a -thinking suffix; Codex needs wire_api=responses | 2026-10-29 |
-| **APINebula** | [apinebula.ai](https://apinebula.ai) | [yes](https://docs.apinebula.com/docs/cli/claude-code) | [yes](https://docs.apinebula.com/docs/cli/codex) | - | [pricing](https://apinebula.ai/zh/pricing) | open | Claude Code requires the 'Claude Code global' token group with an empty model list, else 403; Codex uses the CODEX group; homepage is client-rendered and payment methods could not be read from official pages | 2026-10-29 |
-| **CloseAI** | [www.closeai-asia.com](https://www.closeai-asia.com) | [yes](https://doc.closeai-asia.com/tutorial/integrations/claude-code.html) | [yes](https://doc.closeai-asia.com/tutorial/integrations/codex-cli.html) | Alipay, WeChat Pay, card, bank transfer | [pricing](https://www.closeai-asia.com/pricing) | open | Priced as official price times a multiplier (1.1x to 1.5x tiers in docs); Anthropic protocol under /anthropic prefix, OpenAI-compatible under /v1 | 2026-10-29 |
 | **CoderPlan** | [coderplan.ai](https://coderplan.ai) | [yes](https://coderplan.ai/docs/setup/claude-code) | [yes](https://coderplan.ai/docs/setup/codex-cli) | card | [pricing](https://coderplan.ai/pricing) | open | Pay-as-you-go, top-ups via Stripe, docs say no mainland China invoices yet; Codex needs wire_api=responses | 2026-10-29 |
 | **DuckCoding** | [www.duckcoding.ai](https://www.duckcoding.ai) | [yes](https://docs.duckcoding.ai/) | [yes](https://docs.duckcoding.ai/) | - | [pricing](https://www.duckcoding.ai/pricing) | open | Site and docs are on the .ai domain; duckcoding.com showed an unbound-domain page on 2026-10-29; separate token groups for Claude Code and Codex; pay-as-you-go with per-group multipliers | 2026-10-29 |
-| **laozhang.ai** | [www.laozhang.ai](https://www.laozhang.ai) | [yes](https://docs.laozhang.ai/en/scenarios/programming/claude-code) | [yes](https://docs.laozhang.ai/scenarios/programming/codex-cli.md) | card, bank transfer (business) | [pricing](https://docs.laozhang.ai/pricing.md) | open | Sign-up requires a Gmail address; docs say availability is subject to business whitelist review; Claude output capped at 32768 tokens | 2026-10-29 |
 | **OhMyGPT** | [www.ohmygpt.com](https://www.ohmygpt.com) | [yes](https://docs.ohmygpt.com/docs/code-cli) | [yes](https://docs.ohmygpt.com/docs/code-cli) | Alipay, WeChat Pay, PayPal, card | [pricing](https://www.ohmygpt.com/models) | open | Official npx omgvibe writes Claude Code / Codex config; CDN mirror apic1.ohmycdn.com; homepage notice 2026-10-15 says the discounted Codex channel is discontinued | 2026-10-29 |
 | **OpenRouter** | [openrouter.ai](https://openrouter.ai) | [yes](https://openrouter.ai/docs/guides/guides/claude-code-integration) | [yes](https://openrouter.ai/docs/cookbook/coding-agents/codex-cli) | card, Alipay, USDC | [pricing](https://openrouter.ai/pricing) | open | Model IDs carry a vendor prefix (anthropic/…); platform fee on credit purchases (5.5% Standard); Codex needs wire_api=responses | 2026-10-29 |
 | **PackyAPI（原 PackyCode）** | [www.packyapi.com](https://www.packyapi.com) | [yes](https://docs.packyapi.com/docs/cli/2-claude.html) | [yes](https://docs.packyapi.com/docs/cli/3-codex.html) | Alipay, WeChat Pay | [pricing](https://www.packyapi.ai/pricing) | open | Separate token groups for Claude Code (CC) and Codex; docs also list slb-v1.api.fan; both packyapi.com and packyapi.ai are in use | 2026-10-29 |
@@ -49,18 +45,10 @@ Latest round · probed 2026-10-29 14:55:47 UTC · vantage: GitHub Actions (US) �
 | 88code | `/v1/messages` | yes | yes | 715 ms |
 | 88code | `/v1/chat/completions` | yes | yes | 683 ms |
 | AnyRouter | `/v1/messages` | yes | yes | 1219 ms |
-| APIMart | `/v1/messages` | yes | yes | 351 ms |
-| APIMart | `/v1/chat/completions` | yes | yes | 323 ms |
-| APINebula | `/v1/messages` | yes | yes | 221 ms |
-| APINebula | `/v1/chat/completions` | yes | yes | 529 ms |
-| CloseAI | `/v1/messages` | yes | yes | 176 ms |
-| CloseAI | `/v1/chat/completions` | yes | yes | 134 ms |
 | CoderPlan | `/v1/messages` | yes | yes | 837 ms |
 | CoderPlan | `/v1/chat/completions` | yes | yes | 725 ms |
 | DuckCoding | `/v1/messages` | yes | yes | 1061 ms |
 | DuckCoding | `/v1/chat/completions` | yes | yes | 1078 ms |
-| laozhang.ai | `/v1/messages` | yes | yes | 227 ms |
-| laozhang.ai | `/v1/chat/completions` | yes | yes | 220 ms |
 | OhMyGPT | `/v1/messages` | yes | yes | 243 ms |
 | OhMyGPT | `/v1/chat/completions` | yes | yes | 166 ms |
 | OpenRouter | `/v1/messages` | yes | yes | 91 ms |

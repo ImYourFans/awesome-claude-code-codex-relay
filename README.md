@@ -23,12 +23,8 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 |---|---|---|---|---|---|---|---|---|
 | **88code** | [www.88code.ai](https://www.88code.ai) | [是](https://docs.88code.org/ClaudeCode/Windows.html) | [是](https://docs.88code.org/Codex/Windows.html) | - | [价格](https://docs.88code.org/88code/pricing.html) | 开放 | 以包月套餐为主（按日额度），另有按量包；文档写每账号最多 4 个客户端并发；88code.org 跳转到 88code.ai | 2026-10-29 |
 | **AnyRouter** | [anyrouter.top](https://anyrouter.top) | [是](https://docs.anyrouter.top/) | 否 | - | - | 未核实 | 公益站，官方文档称注册赠送额度、不需付款；注册页有人机验证，官网首页无法抓取文本 | 2026-10-29 |
-| **APIMart** | [apimart.ai](https://apimart.ai) | [是](https://docs.apimart.ai/en/integrations/dev-tool/claude-code.md) | [是](https://docs.apimart.ai/en/integrations/dev-tool/codex-cli.md) | 信用卡、支付宝、PayPal、加密货币 | [价格](https://apimart.ai/pricing) | 开放 | 按量付费，会员等级有不同折扣；Claude 思考变体加 -thinking 后缀；Codex 需 wire_api=responses | 2026-10-29 |
-| **APINebula** | [apinebula.ai](https://apinebula.ai) | [是](https://docs.apinebula.com/docs/cli/claude-code) | [是](https://docs.apinebula.com/docs/cli/codex) | - | [价格](https://apinebula.ai/zh/pricing) | 开放 | Claude Code 需选「Claude Code全球高防」令牌分组且模型列表留空，否则 403；Codex 用 CODEX 分组；官网为纯前端渲染，支付方式未在官方页面读到 | 2026-10-29 |
-| **CloseAI** | [www.closeai-asia.com](https://www.closeai-asia.com) | [是](https://doc.closeai-asia.com/tutorial/integrations/claude-code.html) | [是](https://doc.closeai-asia.com/tutorial/integrations/codex-cli.html) | 支付宝、微信、信用卡、对公转账 | [价格](https://www.closeai-asia.com/pricing) | 开放 | 价格为官方价乘倍率（文档列 1.1x 到 1.5x 三档）；Anthropic 协议走 /anthropic 前缀，OpenAI 兼容走 /v1 | 2026-10-29 |
 | **CoderPlan** | [coderplan.ai](https://coderplan.ai) | [是](https://coderplan.ai/docs/setup/claude-code) | [是](https://coderplan.ai/docs/setup/codex-cli) | 信用卡 | [价格](https://coderplan.ai/pricing) | 开放 | 按量付费，充值走 Stripe，文档称暂不支持国内发票；Codex 需 wire_api=responses | 2026-10-29 |
 | **DuckCoding** | [www.duckcoding.ai](https://www.duckcoding.ai) | [是](https://docs.duckcoding.ai/) | [是](https://docs.duckcoding.ai/) | - | [价格](https://www.duckcoding.ai/pricing) | 开放 | 官网与文档在 .ai 域名，duckcoding.com 2026-10-29 显示域名未绑定；需分别创建 Claude Code 专用和 Codex 专用分组令牌；按量计费，各分组另乘倍率 | 2026-10-29 |
-| **laozhang.ai** | [www.laozhang.ai](https://www.laozhang.ai) | [是](https://docs.laozhang.ai/en/scenarios/programming/claude-code) | [是](https://docs.laozhang.ai/scenarios/programming/codex-cli.md) | 信用卡、对公转账 | [价格](https://docs.laozhang.ai/pricing.md) | 开放 | 注册仅支持 Gmail，文档称服务可用性以企业白名单审核为准；Claude 单次输出上限 32768 | 2026-10-29 |
 | **OhMyGPT** | [www.ohmygpt.com](https://www.ohmygpt.com) | [是](https://docs.ohmygpt.com/docs/code-cli) | [是](https://docs.ohmygpt.com/docs/code-cli) | 支付宝、微信、PayPal、信用卡 | [价格](https://www.ohmygpt.com/models) | 开放 | 官方推荐 npx omgvibe 一键写入 Claude Code / Codex 配置；另有 CDN 镜像域名 apic1.ohmycdn.com；首页公告 2026-10-15 称 Codex 折扣渠道已停用 | 2026-10-29 |
 | **OpenRouter** | [openrouter.ai](https://openrouter.ai) | [是](https://openrouter.ai/docs/guides/guides/claude-code-integration) | [是](https://openrouter.ai/docs/cookbook/coding-agents/codex-cli) | 信用卡、支付宝、USDC | [价格](https://openrouter.ai/pricing) | 开放 | 模型 ID 带厂商前缀（anthropic/…）；购买额度收平台费（Standard 5.5%）；Codex 需 wire_api=responses | 2026-10-29 |
 | **PackyAPI（原 PackyCode）** | [www.packyapi.com](https://www.packyapi.com) | [是](https://docs.packyapi.com/docs/cli/2-claude.html) | [是](https://docs.packyapi.com/docs/cli/3-codex.html) | 支付宝、微信 | [价格](https://www.packyapi.ai/pricing) | 开放 | Claude Code 和 Codex 要分别用 CC 分组和 Codex 分组的令牌；文档另给优化线路 slb-v1.api.fan；官网 packyapi.com 与 packyapi.ai 并存 | 2026-10-29 |
@@ -49,18 +45,10 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | 88code | `/v1/messages` | 是 | 是 | 715 ms |
 | 88code | `/v1/chat/completions` | 是 | 是 | 683 ms |
 | AnyRouter | `/v1/messages` | 是 | 是 | 1219 ms |
-| APIMart | `/v1/messages` | 是 | 是 | 351 ms |
-| APIMart | `/v1/chat/completions` | 是 | 是 | 323 ms |
-| APINebula | `/v1/messages` | 是 | 是 | 221 ms |
-| APINebula | `/v1/chat/completions` | 是 | 是 | 529 ms |
-| CloseAI | `/v1/messages` | 是 | 是 | 176 ms |
-| CloseAI | `/v1/chat/completions` | 是 | 是 | 134 ms |
 | CoderPlan | `/v1/messages` | 是 | 是 | 837 ms |
 | CoderPlan | `/v1/chat/completions` | 是 | 是 | 725 ms |
 | DuckCoding | `/v1/messages` | 是 | 是 | 1061 ms |
 | DuckCoding | `/v1/chat/completions` | 是 | 是 | 1078 ms |
-| laozhang.ai | `/v1/messages` | 是 | 是 | 227 ms |
-| laozhang.ai | `/v1/chat/completions` | 是 | 是 | 220 ms |
 | OhMyGPT | `/v1/messages` | 是 | 是 | 243 ms |
 | OhMyGPT | `/v1/chat/completions` | 是 | 是 | 166 ms |
 | OpenRouter | `/v1/messages` | 是 | 是 | 91 ms |
