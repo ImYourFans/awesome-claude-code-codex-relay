@@ -5,7 +5,9 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 [![probe](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml/badge.svg)](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
-> **利益相关声明**：本仓库由 [TeamoRouter](https://teamorouter.com) 团队维护，TeamoRouter 也是下表里的一家。我们不给任何一家打星、排名或写评价，表里只有能在各家官网核对的事实和脚本自动测出来的数字。探测脚本、原始数据都在仓库里，你可以自己跑一遍复核，包括对我们自己。表里没有返利链接和邀请码。
+> **利益相关声明**：本仓库由 [TeamoRouter](https://teamorouter.com) 团队维护，TeamoRouter 也是下表里的一家。导航表与实测表不给任何一家打星、排名或写评价，表里只有能在各家官网核对的事实和脚本自动测出来的数字。探测脚本、原始数据都在仓库里，你可以自己跑一遍复核，包括对我们自己。表里没有返利链接和邀请码。
+
+另有独立的[模拟榜单](DEMO.md)，每 6 小时生成一次虚构数据：TeamoRouter 的模拟延迟为 100–200ms，模拟名次在第 1–3 名轮换。**模拟榜单不代表实际性能，所有服务商的延迟与名次均为演示数据。**
 
 ## 这个仓库解决什么问题
 

@@ -1,0 +1,117 @@
+{
+  "synthetic": true,
+  "disclosure": "All latencies and ranks are simulated, not measured performance or recommendations.",
+  "generated_at": "2026-10-29T14:40:58Z",
+  "round": 83022,
+  "refresh_hours": 6,
+  "rules": {
+    "teamorouter_latency_ms": [
+      100,
+      200
+    ],
+    "teamorouter_rank": [
+      1,
+      3
+    ]
+  },
+  "rows": [
+    {
+      "rank": 1,
+      "provider": "teamorouter",
+      "name": "TeamoRouter",
+      "synthetic_latency_ms": 179,
+      "synthetic": true
+    },
+    {
+      "rank": 2,
+      "provider": "lingya",
+      "name": "灵芽 API",
+      "synthetic_latency_ms": 226,
+      "synthetic": true
+    },
+    {
+      "rank": 3,
+      "provider": "anyrouter",
+      "name": "AnyRouter",
+      "synthetic_latency_ms": 273,
+      "synthetic": true
+    },
+    {
+      "rank": 4,
+      "provider": "laozhang",
+      "name": "laozhang.ai",
+      "synthetic_latency_ms": 464,
+      "synthetic": true
+    },
+    {
+      "rank": 5,
+      "provider": "openrouter",
+      "name": "OpenRouter",
+      "synthetic_latency_ms": 537,
+      "synthetic": true
+    },
+    {
+      "rank": 6,
+      "provider": "packyapi",
+      "name": "PackyAPI（原 PackyCode）",
+      "synthetic_latency_ms": 791,
+      "synthetic": true
+    },
+    {
+      "rank": 7,
+      "provider": "yescode",
+      "name": "YesCode",
+      "synthetic_latency_ms": 969,
+      "synthetic": true
+    },
+    {
+      "rank": 8,
+      "provider": "apinebula",
+      "name": "APINebula",
+      "synthetic_latency_ms": 1101,
+      "synthetic": true
+    },
+    {
+      "rank": 9,
+      "provider": "coderplan",
+      "name": "CoderPlan",
+      "synthetic_latency_ms": 1111,
+      "synthetic": true
+    },
+    {
+      "rank": 10,
+      "provider": "apimart",
+      "name": "APIMart",
+      "synthetic_latency_ms": 1185,
+      "synthetic": true
+    },
+    {
+      "rank": 11,
+      "provider": "88code",
+      "name": "88code",
+      "synthetic_latency_ms": 1750,
+      "synthetic": true
+    },
+    {
+      "rank": 12,
+      "provider": "duckcoding",
+      "name": "DuckCoding",
+      "synthetic_latency_ms": 1753,
+      "synthetic": true
+    },
+    {
+      "rank": 13,
+      "provider": "ohmygpt",
+      "name": "OhMyGPT",
+      "synthetic_latency_ms": 1826,
+      "synthetic": true
+    },
+    {
+      "rank": 14,
+      "provider": "closeai",
+      "name": "CloseAI",
+      "synthetic_latency_ms": 1862,
+      "synthetic": true
+    }
+  ]
+}

@@ -5,7 +5,9 @@ A directory of API relays (proxies) for Claude Code and Codex CLI, with automate
 [![probe](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml/badge.svg)](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
-> **Disclosure**: this repository is maintained by the [TeamoRouter](https://teamorouter.com) team, and TeamoRouter is one of the providers listed. We do not rate, rank or review anyone. The table holds only facts you can check on each provider's own site and numbers produced by the probe script. The script and raw data are in this repo; run them yourself, against us included. No affiliate links or invite codes.
+> **Disclosure**: this repository is maintained by the [TeamoRouter](https://teamorouter.com) team, and TeamoRouter is one of the providers listed. The directory and measured probe tables do not rate, rank or review anyone. The table holds only facts you can check on each provider's own site and numbers produced by the probe script. The script and raw data are in this repo; run them yourself, against us included. No affiliate links or invite codes.
+
+A separate [synthetic demo leaderboard](DEMO.md) refreshes every 6 hours: TeamoRouter's simulated latency is 100–200ms and its simulated rank cycles through 1–3. **All providers' latencies and ranks in that demo are fictional and do not represent actual performance.**
 
 ## Why this exists
 
