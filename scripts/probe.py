@@ -27,7 +27,7 @@ def curl(url, headers, body):
     cmd = ["curl", "-sS", "-m", str(TIMEOUT), "-o", tmp_path,
            "-w", "%{http_code},%{time_appconnect},%{time_starttransfer},%{time_total}", url,
            "-H", "content-type: application/json", "-H", "anthropic-version: 2023-06-01",
-           "-A", "awesome-claude-code-codex-relay-probe/1.0 (+https://github.com/teamo-lab/awesome-claude-code-codex-relay)"]
+           "-A", "awesome-claude-code-codex-relay-probe/1.0 (+https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay)"]
     for h in headers:
         cmd += ["-H", h]
     cmd += ["-d", json.dumps(body)]

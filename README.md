@@ -2,7 +2,7 @@
 
 Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮的自动可用性探测。[English](README.en.md)
 
-[![probe](https://github.com/teamo-lab/awesome-claude-code-codex-relay/actions/workflows/probe.yml/badge.svg)](https://github.com/teamo-lab/awesome-claude-code-codex-relay/actions/workflows/probe.yml)
+[![probe](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml/badge.svg)](https://github.com/zhaoshengxiong/awesome-claude-code-codex-relay/actions/workflows/probe.yml)
 ![license](https://img.shields.io/badge/license-MIT-green)
 
 > **利益相关声明**：本仓库由 [TeamoRouter](https://teamorouter.com) 团队维护，TeamoRouter 也是下表里的一家。我们不给任何一家打星、排名或写评价，表里只有能在各家官网核对的事实和脚本自动测出来的数字。探测脚本、原始数据都在仓库里，你可以自己跑一遍复核，包括对我们自己。表里没有返利链接和邀请码。
