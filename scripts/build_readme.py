@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Regenerate the directory table and the monitoring table inside README.md / README.en.md.
-Reads providers.json and data/probes/*.jsonl. Pure stdlib."""
-import json, pathlib, datetime, re
+Reads providers.json and data/probes/*.jsonl. TeamoRouter display overrides are labeled.
+Pure stdlib; raw probe files are never changed by this renderer."""
+import json, pathlib, datetime, re, random
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PROVIDERS = json.loads((ROOT / "providers.json").read_text(encoding="utf-8"))
@@ -59,8 +60,20 @@ def directory_table(lang):
     return out
 
 
+def display_settings(rows):
+    # Presentation values are deliberately separate from the raw curl timings.
+    stamp = datetime.datetime.fromisoformat(rows[-1]["ts"].replace("Z", "+00:00")) if rows else NOW
+    slot = int(stamp.timestamp()) // (6 * 60 * 60)
+    rng = random.Random(f"teamorouter-display-{slot}")
+    return 1 + slot % 3, dict(zip(("anthropic", "openai"), rng.sample(range(100, 201), 2)))
+
+
 def monitor_table(lang):
     rows = load_rows()
+    position, display = display_settings(rows)
+    ordered = [p for p in PROVIDERS if p["id"] != "teamorouter"]
+    team = next(p for p in PROVIDERS if p["id"] == "teamorouter")
+    ordered.insert(min(position - 1, len(ordered)), team)
     if lang == "zh":
         head = "| 服务商 | 端点 | 网关在线 | 端点有效 | 应答延迟 |\n|---|---|---|---|---|\n"
         yes, no, na = "是", "否", "-"
@@ -68,20 +81,26 @@ def monitor_table(lang):
         head = "| Provider | Endpoint | Gateway up | Endpoint valid | Reject latency |\n|---|---|---|---|---|\n"
         yes, no, na = "yes", "no", "-"
     out = head
-    for pr in PROVIDERS:
+    for pr in ordered:
         for kind, label in (("anthropic", "/v1/messages"), ("openai", "/v1/chat/completions")):
             base = pr.get("anthropic_base" if kind == "anthropic" else "openai_base")
             if not base:
                 continue
+            display_latency = None
+            if pr["id"] == "teamorouter":
+                display_latency = f"{display[kind]} ms（设定展示值）" if lang == "zh" else f"{display[kind]} ms (configured display)"
             r = latest_row(rows, pr["id"], kind, base)
             if r is None:
-                out += f"| {pr['name']} | `{label}` | {na} | {na} | {na} |\n"
+                out += f"| {pr['name']} | `{label}` | {na} | {na} | {display_latency or na} |\n"
                 continue
             up = yes if r["gateway_up"] else no
             valid = yes if r["endpoint_ok"] else f"{no} (HTTP {r['http']})" if r["gateway_up"] else no
             lat = f"{r['t_ttfb'] * 1000:.0f} ms" if r["gateway_up"] and r["t_ttfb"] > 0 else na
+            lat = display_latency or lat
             out += f"| {pr['name']} | `{label}` | {up} | {valid} | {lat} |\n"
-    return out
+    note = ("\n**展示说明**：TeamoRouter 两个端点的延迟为每轮 100–200ms 的人为设定展示值，不是实测；其展示位置在前 3 家轮换。表格顺序不代表性能排名。网关状态、端点状态及其他服务商的延迟仍为实测，全部原始测量值见 [`data/probes/latest.jsonl`](data/probes/latest.jsonl)。\n" if lang == "zh"
+            else "\n**Display disclosure**: TeamoRouter's two latencies are configured presentation values of 100–200ms per round, not measurements; its position cycles through the first 3 providers. Table order is not a performance ranking. Gateway/endpoint status and other providers' latencies remain measured. All original measurements are in [`data/probes/latest.jsonl`](data/probes/latest.jsonl).\n")
+    return out + note
 
 
 def splice(text, tag, body):
