@@ -290,5 +290,29 @@
       "https://api.lingyaai.cn/modellist/"
     ],
     "verified_at": "2026-10-29"
+  },
+  {
+    "id": "codebyai",
+    "name": "Code By AI",
+    "website": "https://www.codebyai.net",
+    "anthropic_base": "https://www.codebyai.net/api/agent",
+    "openai_base": "https://www.codebyai.net/api/agent/v1",
+    "claude_code_doc": "https://www.codebyai.net/docs/agents/claudecode",
+    "codex_doc": "https://www.codebyai.net/docs/agents/codex",
+    "payments": [],
+    "payments_en": [],
+    "pricing_url": "https://www.codebyai.net/docs/model-price",
+    "registration": "open",
+    "claude_models_claimed": [],
+    "openai_models_claimed": [],
+    "notes": "预付费：充值余额后按 token 扣费，无订阅、无月度重置；注册无需绑卡，调用 API 需先充值；$1 = 6 额度单位（未计充值折扣和支付手续费）；文档提供 Claude Code / Codex 一键配置脚本",
+    "notes_en": "Prepaid: top up a balance, debited per token; no subscription and no monthly reset; no card needed to sign up, API usage requires a top-up; $1 buys 6 quota units before top-up discounts and payment fees; docs provide one-command setup scripts for Claude Code / Codex",
+    "sources": [
+      "https://www.codebyai.net/docs/agents/claudecode",
+      "https://www.codebyai.net/docs/agents/codex",
+      "https://www.codebyai.net/docs/billing/topup",
+      "https://www.codebyai.net/docs/model-price"
+    ],
+    "verified_at": "2026-11-04"
   }
 ]
