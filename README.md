@@ -31,6 +31,7 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | **TeamoRouter**（本仓库维护者） | [teamorouter.com](https://teamorouter.com) | [是](https://teamorouter.com/zh/docs/install-claude-code) | [是](https://teamorouter.com/zh/docs/install-codex) | 支付宝、信用卡、USDT | [价格](https://teamorouter.com/zh/pricing) | 开放 | 按量计费；同一个 Key 同时走 Anthropic 兼容和 OpenAI 兼容端点；海外入口 api.teamorouter.com，国内入口 api.teamorouter.cn，本表从海外节点探前者；本仓库维护者 | 2026-10-29 |
 | **YesCode** | [co.yes.vg](https://co.yes.vg) | 否 | 否 | - | - | 未核实 | 官网为纯前端应用，文档和价格页需站内渲染；Base URL 取自官方脚本 setup-claude-code.sh 和 setup-codex.sh（Codex 用 wire_api=responses） | 2026-10-29 |
 | **灵芽 API** | [api.lingyaai.cn](https://api.lingyaai.cn) | [是](https://api.lingyaai.cn/aicoding.html#claude) | [是](https://api.lingyaai.cn/aicoding.html#codex) | - | [价格](https://api.lingyaai.cn/modellist/) | 开放 | Claude Code / Codex / Gemini CLI 各有专用分组；官方 Claude Code 示例配置的是 glm-5.2 等国产模型，FAQ 模型列表未出现 Claude 模型 ID | 2026-10-29 |
+| **Code By AI** | [www.codebyai.net](https://www.codebyai.net) | [是](https://www.codebyai.net/docs/agents/claudecode) | [是](https://www.codebyai.net/docs/agents/codex) | - | [价格](https://www.codebyai.net/docs/model-price) | 开放 | 预付费：充值余额后按 token 扣费，无订阅、无月度重置；注册无需绑卡，调用 API 需先充值；$1 = 6 额度单位（未计充值折扣和支付手续费）；文档提供 Claude Code / Codex 一键配置脚本 | 2026-11-04 |
 <!-- DIRECTORY:END -->
 
 表按名称排序，不是排名。「Claude Code / Codex CLI」列里的「是」链接到该家自己的接入文档；「否」表示我们在官网没找到对应文档，不代表不能用。支付方式只写官网明确列出的。想补充或更正，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
@@ -63,6 +64,8 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | YesCode | `/v1/chat/completions` | 是 | 是 | 431 ms |
 | 灵芽 API | `/v1/messages` | 是 | 是 | 1056 ms |
 | 灵芽 API | `/v1/chat/completions` | 是 | 是 | 1003 ms |
+| Code By AI | `/v1/messages` | - | - | - |
+| Code By AI | `/v1/chat/completions` | - | - | - |
 <!-- MONITOR:END -->
 
 
