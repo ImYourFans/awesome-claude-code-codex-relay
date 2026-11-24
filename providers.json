@@ -46,6 +46,33 @@
     "verified_at": "2026-10-29"
   },
   {
+    "id": "beiluo-api",
+    "name": "北洛API",
+    "website": "https://beiluoxi.xyz",
+    "anthropic_base": "https://beiluoxi.xyz",
+    "openai_base": "https://beiluoxi.xyz",
+    "claude_code_doc": "https://beiluoxi.xyz/help/_full.html",
+    "codex_doc": "https://beiluoxi.xyz/help/_full.html",
+    "payments": [],
+    "payments_en": [],
+    "pricing_url": "https://beiluoxi.xyz/api/provider/pricing",
+    "registration": "open",
+    "claude_models_claimed": [
+      "claude-sonnet-4-6"
+    ],
+    "openai_models_claimed": [
+      "gpt-6.2-sol"
+    ],
+    "notes": "按模型和分组以人民币计价，公开价目区分输入、输出及缓存；Codex CLI 使用 Responses 接口。",
+    "notes_en": "Public CNY prices are listed by model and group, with separate input, output, and cache rates. The Codex CLI guide uses the Responses API.",
+    "sources": [
+      "https://beiluoxi.xyz/",
+      "https://beiluoxi.xyz/help/_full.html",
+      "https://beiluoxi.xyz/api/provider/pricing"
+    ],
+    "verified_at": "2026-11-24"
+  },
+  {
     "id": "coderplan",
     "name": "CoderPlan",
     "website": "https://coderplan.ai",

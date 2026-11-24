@@ -23,6 +23,7 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 |---|---|---|---|---|---|---|---|---|
 | **88code** | [www.88code.ai](https://www.88code.ai) | [是](https://docs.88code.org/ClaudeCode/Windows.html) | [是](https://docs.88code.org/Codex/Windows.html) | - | [价格](https://docs.88code.org/88code/pricing.html) | 开放 | 以包月套餐为主（按日额度），另有按量包；文档写每账号最多 4 个客户端并发；88code.org 跳转到 88code.ai | 2026-10-29 |
 | **AnyRouter** | [anyrouter.top](https://anyrouter.top) | [是](https://docs.anyrouter.top/) | 否 | - | - | 未核实 | 公益站，官方文档称注册赠送额度、不需付款；注册页有人机验证，官网首页无法抓取文本 | 2026-10-29 |
+| **北洛API** | [beiluoxi.xyz](https://beiluoxi.xyz) | [是](https://beiluoxi.xyz/help/_full.html) | [是](https://beiluoxi.xyz/help/_full.html) | - | [价格](https://beiluoxi.xyz/api/provider/pricing) | 开放 | 按模型和分组以人民币计价，公开价目区分输入、输出及缓存；Codex CLI 使用 Responses 接口。 | 2026-11-24 |
 | **CoderPlan** | [coderplan.ai](https://coderplan.ai) | [是](https://coderplan.ai/docs/setup/claude-code) | [是](https://coderplan.ai/docs/setup/codex-cli) | 信用卡 | [价格](https://coderplan.ai/pricing) | 开放 | 按量付费，充值走 Stripe，文档称暂不支持国内发票；Codex 需 wire_api=responses | 2026-10-29 |
 | **DuckCoding** | [www.duckcoding.ai](https://www.duckcoding.ai) | [是](https://docs.duckcoding.ai/) | [是](https://docs.duckcoding.ai/) | - | [价格](https://www.duckcoding.ai/pricing) | 开放 | 官网与文档在 .ai 域名，duckcoding.com 2026-10-29 显示域名未绑定；需分别创建 Claude Code 专用和 Codex 专用分组令牌；按量计费，各分组另乘倍率 | 2026-10-29 |
 | **OhMyGPT** | [www.ohmygpt.com](https://www.ohmygpt.com) | [是](https://docs.ohmygpt.com/docs/code-cli) | [是](https://docs.ohmygpt.com/docs/code-cli) | 支付宝、微信、PayPal、信用卡 | [价格](https://www.ohmygpt.com/models) | 开放 | 官方推荐 npx omgvibe 一键写入 Claude Code / Codex 配置；另有 CDN 镜像域名 apic1.ohmycdn.com；首页公告 2026-10-15 称 Codex 折扣渠道已停用 | 2026-10-29 |
@@ -47,6 +48,8 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | 88code | `/v1/messages` | 是 | 是 | 715 ms |
 | 88code | `/v1/chat/completions` | 是 | 是 | 683 ms |
 | AnyRouter | `/v1/messages` | 是 | 是 | 1219 ms |
+| 北洛API | `/v1/messages` | - | - | - |
+| 北洛API | `/v1/chat/completions` | - | - | - |
 | CoderPlan | `/v1/messages` | 是 | 是 | 837 ms |
 | CoderPlan | `/v1/chat/completions` | 是 | 是 | 725 ms |
 | DuckCoding | `/v1/messages` | 是 | 是 | 1061 ms |
