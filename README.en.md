@@ -23,6 +23,7 @@ Not done here: judging model authenticity (see "Verify a relay yourself"), compa
 |---|---|---|---|---|---|---|---|---|
 | **88code** | [www.88code.ai](https://www.88code.ai) | [yes](https://docs.88code.org/ClaudeCode/Windows.html) | [yes](https://docs.88code.org/Codex/Windows.html) | - | [pricing](https://docs.88code.org/88code/pricing.html) | open | Mainly monthly plans with daily quotas, plus pay-as-you-go packs; docs state at most 4 concurrent clients per account; 88code.org redirects to 88code.ai | 2026-10-29 |
 | **AnyRouter** | [anyrouter.top](https://anyrouter.top) | [yes](https://docs.anyrouter.top/) | no | - | - | unverified | Community (free) relay; docs say sign-up credits, no payment; registration page sits behind a CAPTCHA and the homepage could not be read | 2026-10-29 |
+| **北洛API** | [beiluoxi.xyz](https://beiluoxi.xyz) | [yes](https://beiluoxi.xyz/help/_full.html) | [yes](https://beiluoxi.xyz/help/_full.html) | - | [pricing](https://beiluoxi.xyz/api/provider/pricing) | open | Public CNY prices are listed by model and group, with separate input, output, and cache rates. The Codex CLI guide uses the Responses API. | 2026-11-24 |
 | **CoderPlan** | [coderplan.ai](https://coderplan.ai) | [yes](https://coderplan.ai/docs/setup/claude-code) | [yes](https://coderplan.ai/docs/setup/codex-cli) | card | [pricing](https://coderplan.ai/pricing) | open | Pay-as-you-go, top-ups via Stripe, docs say no mainland China invoices yet; Codex needs wire_api=responses | 2026-10-29 |
 | **DuckCoding** | [www.duckcoding.ai](https://www.duckcoding.ai) | [yes](https://docs.duckcoding.ai/) | [yes](https://docs.duckcoding.ai/) | - | [pricing](https://www.duckcoding.ai/pricing) | open | Site and docs are on the .ai domain; duckcoding.com showed an unbound-domain page on 2026-10-29; separate token groups for Claude Code and Codex; pay-as-you-go with per-group multipliers | 2026-10-29 |
 | **OhMyGPT** | [www.ohmygpt.com](https://www.ohmygpt.com) | [yes](https://docs.ohmygpt.com/docs/code-cli) | [yes](https://docs.ohmygpt.com/docs/code-cli) | Alipay, WeChat Pay, PayPal, card | [pricing](https://www.ohmygpt.com/models) | open | Official npx omgvibe writes Claude Code / Codex config; CDN mirror apic1.ohmycdn.com; homepage notice 2026-10-15 says the discounted Codex channel is discontinued | 2026-10-29 |
@@ -47,6 +48,8 @@ Probed 2026-10-29 14:55:47 UTC · every 6 hours, latest round only
 | 88code | `/v1/messages` | yes | yes | 715 ms |
 | 88code | `/v1/chat/completions` | yes | yes | 683 ms |
 | AnyRouter | `/v1/messages` | yes | yes | 1219 ms |
+| 北洛API | `/v1/messages` | - | - | - |
+| 北洛API | `/v1/chat/completions` | - | - | - |
 | CoderPlan | `/v1/messages` | yes | yes | 837 ms |
 | CoderPlan | `/v1/chat/completions` | yes | yes | 725 ms |
 | DuckCoding | `/v1/messages` | yes | yes | 1061 ms |
