@@ -31,6 +31,7 @@ Not done here: judging model authenticity (see "Verify a relay yourself"), compa
 | **TeamoRouter** (maintainer) | [teamorouter.com](https://teamorouter.com) | [yes](https://teamorouter.com/zh/docs/install-claude-code) | [yes](https://teamorouter.com/zh/docs/install-codex) | Alipay, card, USDT | [pricing](https://teamorouter.com/zh/pricing) | open | Pay-as-you-go; one key serves both the Anthropic-compatible and OpenAI-compatible endpoints; api.teamorouter.com is the global entry and api.teamorouter.cn the China entry, the probe hits the former; maintained by this repo's owner | 2026-10-29 |
 | **YesCode** | [co.yes.vg](https://co.yes.vg) | no | no | - | - | unverified | Client-rendered site; docs and pricing are not readable statically; base URLs taken from the official setup-claude-code.sh and setup-codex.sh scripts (Codex uses wire_api=responses) | 2026-10-29 |
 | **灵芽 API** | [api.lingyaai.cn](https://api.lingyaai.cn) | [yes](https://api.lingyaai.cn/aicoding.html#claude) | [yes](https://api.lingyaai.cn/aicoding.html#codex) | - | [pricing](https://api.lingyaai.cn/modellist/) | open | Separate groups for Claude Code / Codex / Gemini CLI; the official Claude Code example sets domestic models such as glm-5.2 and the FAQ model list shows no Claude model IDs | 2026-10-29 |
+| **QCode.cc** | [qcode.cc](https://qcode.cc) | [yes](https://docs.qcode.cc/docs/getting-started/claude-code-tutorial) | [yes](https://docs.qcode.cc/docs/getting-started/codex-quick-start) | Alipay, WeChat Pay, Card, Apple Pay, Google Pay, Crypto | [pricing](https://qcode.cc/pricing) | open | One key serves both an Anthropic endpoint (/api) and an OpenAI-compatible endpoint (/openai/v1); Claude models only on the Anthropic endpoint, GPT models only on the OpenAI endpoint; subscription plans and pay-as-you-go packs; regional hosts asia.qcode.cc and us.qcode.cc | 2026-11-25 |
 <!-- DIRECTORY:END -->
 
 Rows are sorted by name, not ranked. "yes" in the Claude Code / Codex CLI columns links to that provider's own setup doc; "no" means we could not find one on their site, not that it does not work. Payments list only what the site states. To add or correct a row see [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -63,6 +64,8 @@ Probed 2026-10-29 14:55:47 UTC · every 6 hours, latest round only
 | YesCode | `/v1/chat/completions` | yes | yes | 431 ms |
 | 灵芽 API | `/v1/messages` | yes | yes | 1056 ms |
 | 灵芽 API | `/v1/chat/completions` | yes | yes | 1003 ms |
+| QCode.cc | `/v1/messages` | - | - | - |
+| QCode.cc | `/v1/chat/completions` | - | - | - |
 <!-- MONITOR:END -->
 
 
