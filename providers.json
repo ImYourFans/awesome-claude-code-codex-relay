@@ -290,5 +290,51 @@
       "https://api.lingyaai.cn/modellist/"
     ],
     "verified_at": "2026-10-29"
+  },
+  {
+    "id": "qcode",
+    "name": "QCode.cc",
+    "website": "https://qcode.cc",
+    "anthropic_base": "https://api.qcode.cc/api",
+    "openai_base": "https://api.qcode.cc/openai/v1",
+    "claude_code_doc": "https://docs.qcode.cc/docs/getting-started/claude-code-tutorial",
+    "codex_doc": "https://docs.qcode.cc/docs/getting-started/codex-quick-start",
+    "payments": [
+      "支付宝",
+      "微信",
+      "信用卡",
+      "Apple Pay",
+      "Google Pay",
+      "加密货币"
+    ],
+    "payments_en": [
+      "Alipay",
+      "WeChat Pay",
+      "Card",
+      "Apple Pay",
+      "Google Pay",
+      "Crypto"
+    ],
+    "pricing_url": "https://qcode.cc/pricing",
+    "registration": "open",
+    "claude_models_claimed": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "openai_models_claimed": [
+      "gpt-6.2-sol",
+      "gpt-6.1-sol"
+    ],
+    "notes": "同一个 key 同时提供 Anthropic（/api）与 OpenAI 兼容（/openai/v1）接入点；Claude 模型只走 Anthropic 接入点，GPT 模型只走 OpenAI 接入点；套餐订阅与按量包两种计费；另有 asia.qcode.cc、us.qcode.cc 区域入口",
+    "notes_en": "One key serves both an Anthropic endpoint (/api) and an OpenAI-compatible endpoint (/openai/v1); Claude models only on the Anthropic endpoint, GPT models only on the OpenAI endpoint; subscription plans and pay-as-you-go packs; regional hosts asia.qcode.cc and us.qcode.cc",
+    "sources": [
+      "https://docs.qcode.cc/docs/getting-started/endpoints-and-api-paths",
+      "https://docs.qcode.cc/docs/getting-started/claude-code-tutorial",
+      "https://docs.qcode.cc/docs/getting-started/codex-quick-start",
+      "https://docs.qcode.cc/docs/reference/payment-methods",
+      "https://qcode.cc/pricing",
+      "https://qcode.cc/models"
+    ],
+    "verified_at": "2026-11-25"
   }
 ]

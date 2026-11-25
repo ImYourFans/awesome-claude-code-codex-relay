@@ -31,6 +31,7 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | **TeamoRouter**（本仓库维护者） | [teamorouter.com](https://teamorouter.com) | [是](https://teamorouter.com/zh/docs/install-claude-code) | [是](https://teamorouter.com/zh/docs/install-codex) | 支付宝、信用卡、USDT | [价格](https://teamorouter.com/zh/pricing) | 开放 | 按量计费；同一个 Key 同时走 Anthropic 兼容和 OpenAI 兼容端点；海外入口 api.teamorouter.com，国内入口 api.teamorouter.cn，本表从海外节点探前者；本仓库维护者 | 2026-10-29 |
 | **YesCode** | [co.yes.vg](https://co.yes.vg) | 否 | 否 | - | - | 未核实 | 官网为纯前端应用，文档和价格页需站内渲染；Base URL 取自官方脚本 setup-claude-code.sh 和 setup-codex.sh（Codex 用 wire_api=responses） | 2026-10-29 |
 | **灵芽 API** | [api.lingyaai.cn](https://api.lingyaai.cn) | [是](https://api.lingyaai.cn/aicoding.html#claude) | [是](https://api.lingyaai.cn/aicoding.html#codex) | - | [价格](https://api.lingyaai.cn/modellist/) | 开放 | Claude Code / Codex / Gemini CLI 各有专用分组；官方 Claude Code 示例配置的是 glm-5.2 等国产模型，FAQ 模型列表未出现 Claude 模型 ID | 2026-10-29 |
+| **QCode.cc** | [qcode.cc](https://qcode.cc) | [是](https://docs.qcode.cc/docs/getting-started/claude-code-tutorial) | [是](https://docs.qcode.cc/docs/getting-started/codex-quick-start) | 支付宝、微信、信用卡、Apple Pay、Google Pay、加密货币 | [价格](https://qcode.cc/pricing) | 开放 | 同一个 key 同时提供 Anthropic（/api）与 OpenAI 兼容（/openai/v1）接入点；Claude 模型只走 Anthropic 接入点，GPT 模型只走 OpenAI 接入点；套餐订阅与按量包两种计费；另有 asia.qcode.cc、us.qcode.cc 区域入口 | 2026-11-25 |
 <!-- DIRECTORY:END -->
 
 表按名称排序，不是排名。「Claude Code / Codex CLI」列里的「是」链接到该家自己的接入文档；「否」表示我们在官网没找到对应文档，不代表不能用。支付方式只写官网明确列出的。想补充或更正，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
@@ -63,6 +64,8 @@ Claude Code / Codex CLI 中转站（API relay）导航，附每 6 小时一轮�
 | YesCode | `/v1/chat/completions` | 是 | 是 | 431 ms |
 | 灵芽 API | `/v1/messages` | 是 | 是 | 1056 ms |
 | 灵芽 API | `/v1/chat/completions` | 是 | 是 | 1003 ms |
+| QCode.cc | `/v1/messages` | - | - | - |
+| QCode.cc | `/v1/chat/completions` | - | - | - |
 <!-- MONITOR:END -->
 
 
